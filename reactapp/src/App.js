@@ -1,13 +1,15 @@
-
+import logo from './logo.svg';
 import './App.css';
-import TaskDetails from './components/TaskDetails';
+import AssignTask from './components/TaskDetails';
 import Home from './components/Home';
+
 function App() {
   return (
     <div className="App">
       <Home/>
-     <TaskDetails/>
+      <AssignTask/>
     </div>
   );
 }
+
 export default App;

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './TaskDetails.css';
+import '../styles/TaskDetails.css';
 function TaskDetails() {
     const [data, setData] = useState({
       task: '',
@@ -21,8 +21,11 @@ function TaskDetails() {
     return (
       <div className="app-container">
         <center>
+
           <h1>Assigning Task</h1>
+
           <h2>Employee ID:</h2>
+
           <form onSubmit={submitHandler} className="form-container">
             <div className="input-row">
               <label className="input-label">Task Name:</label>
@@ -35,6 +38,7 @@ function TaskDetails() {
                 placeholder="Task"
               />
             </div>
+
             <div className="input-row">
               <label className="input-label">Description:</label>
               <input
@@ -46,6 +50,7 @@ function TaskDetails() {
                 placeholder="Description"
               />
             </div>
+
             <div className="input-row">
               <label className="input-label">Due Date:</label>
               <input
@@ -56,6 +61,7 @@ function TaskDetails() {
                 className="input-field"
               />
             </div>
+
             <div className="input-button">
               <input
                 type="submit"
@@ -63,9 +69,13 @@ function TaskDetails() {
                 className="submit-button"
               />
             </div>
+
           </form>
+
         </center>
+
       </div>
+
     );
   }
   
