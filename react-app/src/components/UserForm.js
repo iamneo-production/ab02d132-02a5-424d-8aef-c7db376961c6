@@ -10,7 +10,7 @@ import {
   MDBCol,
   MDBRadio
 } from 'mdb-react-ui-kit';
-function CreateUser() {
+function UserForm() {
     const [value, setValue] = useState('')
     const [value1, setValue1] = useState('')
     const [value2, setValue2] = useState('')
@@ -46,12 +46,13 @@ function CreateUser() {
            <MDBInput wrapperClass='mb-4' label='UserName' id='form3' type='text'
            value={value2}
            onChange={(e)=>setValue2(e.target.value)} />
-           <MDBInput wrapperClass='mb-4' label='Emplyee Id' id='form3' type='text'
-           value={value3}
-           onChange={(e)=>setValue3(e.target.value)} />
-           <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='text'
+           <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email'
            value={value4}
            onChange={(e)=>setValue4(e.target.value)} />
+           <MDBInput wrapperClass='mb-4' label='Password' id='form3' type='Password'
+           value={value3}
+           onChange={(e)=>setValue3(e.target.value)} />
+           
            
            {/* <select class="form-select" aria-label="Default select example">
   <option selected>Gender</option>
@@ -121,6 +122,4 @@ function CreateUser() {
   )
 }
 
-
-
-export default CreateUser
+export default UserForm
