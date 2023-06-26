@@ -10,6 +10,7 @@ import {
   MDBCol,
   MDBRadio
 } from 'mdb-react-ui-kit';
+
 function UserForm() {
     const [value, setValue] = useState('')
     const [value1, setValue1] = useState('')
@@ -46,13 +47,13 @@ function UserForm() {
            <MDBInput wrapperClass='mb-4' label='UserName' id='form3' type='text'
            value={value2}
            onChange={(e)=>setValue2(e.target.value)} />
-           <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='email'
+           
+           <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='Email'
            value={value4}
            onChange={(e)=>setValue4(e.target.value)} />
            <MDBInput wrapperClass='mb-4' label='Password' id='form3' type='Password'
            value={value3}
            onChange={(e)=>setValue3(e.target.value)} />
-           
            
            {/* <select class="form-select" aria-label="Default select example">
   <option selected>Gender</option>
