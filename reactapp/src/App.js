@@ -1,3 +1,4 @@
+
 import logo from './logo.svg';
 import './App.css';
 import AssignTask from './components/TaskDetails';
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       <Home/>
       <AssignTask/>
-    </div>
+      </div>
+
   );
 }
 
