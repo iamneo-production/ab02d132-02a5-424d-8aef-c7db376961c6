@@ -19,8 +19,8 @@ function App() {
     <>
       <div className="App">
         <UserForm/>
-        {/* <AdminNavbar/>
-        <HomePageNavbar/>
+        {/* <AdminNavbar/> */}
+        {/* <HomePageNavbar/>
         <TeamLeaderNavbar/>
         <TeamMemberNavbar/> */}
 

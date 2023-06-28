@@ -9,7 +9,7 @@ export default function HomePageNavbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img src="./images/logo.png" width="" height="30" />
+                        <img src="./images/logo.png"  alt ="virtusa" width="" height="30" />
                     </a>
                     <div className="d-flex" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
