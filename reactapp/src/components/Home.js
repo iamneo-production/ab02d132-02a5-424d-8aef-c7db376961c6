@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import '../styles/Home.css';
+=======
+import './Home.css';
+>>>>>>> 9b306bb (First commit)
 import taskImage from '../images/Task.png';
 
 const Home = () => {
