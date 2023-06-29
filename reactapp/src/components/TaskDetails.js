@@ -25,6 +25,7 @@ function TaskDetails() {
         <center>
 
           <h1>Assigning Task</h1>
+
           <h2>Employee ID:</h2>
 
           <form onSubmit={submitHandler} className="form-container">
@@ -39,6 +40,10 @@ function TaskDetails() {
                 placeholder="Task"
               />
             </div>
+
+
+
+
             <div className="input-row">
               <label className="input-label">Description:</label>
               <input
@@ -50,6 +55,9 @@ function TaskDetails() {
                 placeholder="Description"
               />
             </div>
+
+
+
             <div className="input-row">
               <label className="input-label">Due Date:</label>
               <input
@@ -60,6 +68,9 @@ function TaskDetails() {
                 className="input-field"
               />
             </div>
+
+
+
             <div className="input-button">
               <input
                 type="submit"
@@ -69,7 +80,9 @@ function TaskDetails() {
             </div>
 
           </form>
+
         </center>
+
       </div>
 
     );
