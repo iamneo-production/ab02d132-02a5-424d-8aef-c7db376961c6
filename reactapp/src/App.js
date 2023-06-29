@@ -1,12 +1,13 @@
 
 import './App.css';
-import { Login } from './components/Login';
+import TaskDetails from './components/TaskDetails';
+import Home from './components/Home';
 function App() {
   return (
     <div className="App">
-     <Login/>
+      <Home/>
+     <TaskDetails/>
     </div>
   );
 }
-
 export default App;
