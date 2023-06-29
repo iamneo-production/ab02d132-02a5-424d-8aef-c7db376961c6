@@ -8,8 +8,9 @@ function App() {
     <div className="App">
       <Home/>
      <TaskDetails/>
-     <UserList2/>
+
+    
     </div>
+
   );
 }
-export default App;
