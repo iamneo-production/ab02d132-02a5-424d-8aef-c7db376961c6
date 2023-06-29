@@ -1,12 +1,13 @@
 
 import './App.css';
-import UserForm from './components/UserForm';
+import TaskDetails from './components/TaskDetails';
+import Home from './components/Home';
 function App() {
   return (
     <div className="App">
-     <UserForm/>
+      <Home/>
+     <TaskDetails/>
     </div>
   );
 }
-
 export default App;
