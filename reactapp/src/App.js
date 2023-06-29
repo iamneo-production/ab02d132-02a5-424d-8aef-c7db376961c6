@@ -1,12 +1,12 @@
+import React from 'react';
 
-import './App.css';
-import UserForm from './components/UserForm';
-function App() {
+import UserList from './components/UserList';
+
+export default function App() {
   return (
-    <div className="App">
-     <UserForm/>
+    <div>
+      
+      <UserList/>
     </div>
   );
 }
-
-export default App;
