@@ -3,18 +3,18 @@ import './TaskList.css';
 import Switch from 'react-switch';
 
 const TaskDetails = () => {
-    const [Data, setData] = React.useState([
+    const [Data] = React.useState([
         {
             taskid: "1",
             taskname: "Frontend",
             taskdate: "22-02-2023",
-            taskstatus: "Assigned",
+            taskstatus: "Done",
         },
         {
             taskid: "2",
             taskname: "Backend",
             taskdate: "21-03-2023",
-            taskstatus: "Pending",
+            taskstatus: "To Do",
         }
     ]);
 
