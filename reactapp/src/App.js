@@ -1,5 +1,15 @@
 import React from 'react';
 
+<<<<<<< HEAD
+import './App.css';
+// import UserForm from './components/UserForm';
+import TaskList from './components/TaskList';
+function App() {
+  return (
+    <div className="App">
+     {/* <UserForm/> */}
+     <TaskList/>
+=======
 
 
 
@@ -13,6 +23,7 @@ function App() {
     <div className="App">
       <Home/>
 
+>>>>>>> 42b8b7d97041c8389fc69ee98cc59595acd06a9b
     </div>
 
   );
