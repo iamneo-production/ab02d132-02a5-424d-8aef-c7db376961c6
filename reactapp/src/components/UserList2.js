@@ -9,8 +9,6 @@ function UserList2() {
           <th scope='col'>Employee ID</th>  
           <th scope='col'>Name</th>
           <th scope='col'>Task</th>
-          
-          
           <th scope='col'>Actions</th>
         </tr>
       </MDBTableHead>
