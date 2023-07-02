@@ -1,7 +1,6 @@
 import React from 'react';
 
 import '../styles/Home.css';
-
 import './Home.css';
 
 import taskImage from '../images/Task.png';
