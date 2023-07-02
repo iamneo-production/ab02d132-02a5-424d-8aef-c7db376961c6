@@ -1,16 +1,16 @@
 
 import './App.css';
-import UserList1 from './components/UserList1';
-// import UserForm from './components/UserForm';
-
-
+import TaskDetails from './components/TaskDetails';
+import Home from './components/Home';
+import UserList2 from './components/UserList2';
 function App() {
   return (
     <div className="App">
-     {/* <UserForm/> */}
-     <UserList1/>
+      <Home/>
+     <TaskDetails/>
+
+    
     </div>
+
   );
 }
-
-export default App;
