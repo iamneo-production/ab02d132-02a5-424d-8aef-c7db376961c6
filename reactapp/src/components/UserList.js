@@ -79,6 +79,34 @@ function UserList() {
             </div>
           </td>
         </tr>
+
+        <tr>
+          <td>
+            <center>
+              <p className="fw-bold mb-1">Elon Musk</p>
+              <p className="text-muted mb-0">muks.elon@gmail.com</p>
+            </center>
+          </td>
+          <td>
+            <center>
+              <p className="fw-bold mb-1">003</p>
+            </center>
+          </td>
+          <td>
+            <center>
+              <span className="badge bg-danger">Inactive</span>
+            </center>
+          </td>
+          <td>
+            <center>Team Member</center>
+          </td>
+          <td>
+            <div>
+              <i className="fas fa-pencil-alt text-primary me-2"></i>
+              <i className="fas fa-trash text-danger"></i>
+            </div>
+          </td>
+        </tr>
       </tbody>
     </table>
   )
