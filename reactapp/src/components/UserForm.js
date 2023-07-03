@@ -30,7 +30,7 @@ function UserForm() {
        event.preventDefault(); 
     };
     
-//   let status=["Assigned","Inprogress","Completed"]; 
+
   return (
     <div className="App">
       <form>
@@ -55,12 +55,7 @@ function UserForm() {
            value={value3}
            onChange={(e)=>setValue3(e.target.value)} />
            
-           {/* <select class="form-select" aria-label="Default select example">
-  <option selected>Gender</option>
-  <option value="1">Female</option>
-  <option value="2">Male</option>
-  <option value="3">Other</option>
-</select> */}
+          
   <MDBInput wrapperClass='mb-4' label='Task' id='form3' type='text' 
         value={value}
         onChange={(e)=>setValue(e.target.value)}
@@ -70,20 +65,13 @@ function UserForm() {
         onChange={(e)=>setValue1(e.target.value)}
         />
       
-       {/* {status.map(result=>(
-         <>
- <MDBRadio btn btnColor='secondary' id='btn-radio2' name='options' wrapperTag='span' label={result}  onChange={(e)=>setcolor(e.target.value)} value={result}/>
- 
- </>
-       ))}
-       
-     */}
+     
      <>
       <MDBRadio btn btnColor='secondary' id='btn-radio1' name='options' wrapperTag='span' label="Leader" onChange={(e)=>setcolor(e.target.value)} value="Leader"/>
 
       <MDBRadio btn btnColor='secondary' id='btn-radio2' name='options' wrapperClass='mx-2' wrapperTag='span' label='Member' onChange={(e)=>setcolor(e.target.value)}  value="Member"/>
 
-      {/* <MDBRadio btn btnColor='secondary' id='btn-radio3' name='options' wrapperTag='span' label='InProgress' onChange={(e)=>setcolor(e.target.value)} value="Inprogress"/> */}
+     
       </>
    <br/>
     <br/>
@@ -111,9 +99,9 @@ function UserForm() {
       </MDBRow>
       </MDBContainer>
       <div>
-         <ul>
-      {task.map(task=><li  value={task}>{task}</li>)}
-      </ul>
+         <p>
+        {task.map(task=> - <p  value={task}>{task}</p>)}
+      </p>
       </div>
      
       </form>

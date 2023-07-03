@@ -1,8 +1,8 @@
-import React from 'react';
 
+import './App.css';
 import UserList from './components/UserList';
 import UserForm from './components/UserForm';
-export default function App() {
+function App() {
   return (
     <div>
       <UserForm/>
@@ -10,3 +10,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
