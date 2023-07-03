@@ -99,9 +99,9 @@ function UserForm() {
       </MDBRow>
       </MDBContainer>
       <div>
-         <ul>
-      {task.map(task=><li  value={task}>{task}</li>)}
-      </ul>
+         <p>
+        {task.map(task=> - <p  value={task}>{task}</p>)}
+      </p>
       </div>
      
       </form>
