@@ -1,10 +1,12 @@
 
 import './App.css';
-import { Login } from './components/Login';
+import UserList from './components/UserList';
+import UserForm from './components/UserForm';
 function App() {
   return (
-    <div className="App">
-     <Login/>
+    <div>
+      <UserForm/>
+      <UserList/>
     </div>
   );
 }

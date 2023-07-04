@@ -1,0 +1,34 @@
+.table {
+    height: "auto";
+    width: "auto";
+    margin-top: 30px;
+    margin-left: 30px;
+  
+    
+    background-color: lightblue;
+  }
+  .tr {
+    text-align: center;
+    color: black;
+  }
+  .tbd {
+    background-color: white;
+    color:black;
+    text-align: center;
+  
+  }
+  .box {
+    height: 8cm;
+    width: 8cm;
+    background-color: rgb(222, 236, 242);
+    margin-top: 80px;
+    margin-left: 5cm;
+  }
+  .head {
+    margin-top: 10px;
+    align-items: center;
+  }
+  .title {
+  text-decoration: underline;
+  }
+  
