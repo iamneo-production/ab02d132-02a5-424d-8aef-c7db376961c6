@@ -21,7 +21,7 @@ function TeammembersList() {
   return (
     <>
     <h2> Team Members List  </h2>
-    <table>
+    <table> 
       <thead>
         <tr>
           <th>Emp ID</th>
