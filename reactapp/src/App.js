@@ -1,12 +1,13 @@
 
 import './App.css';
-import { Login } from './Components/UI/Login';
-
+import UserList from './components/UserList';
+import UserForm from './components/UserForm';
 function App() {
   return (
     <>
       <Login></Login>
-
+      <UserForm/>
+      <UserList/>
     </>
   );
 }
