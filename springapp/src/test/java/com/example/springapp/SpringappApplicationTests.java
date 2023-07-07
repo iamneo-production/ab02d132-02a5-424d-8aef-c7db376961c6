@@ -26,10 +26,13 @@ class SpringappApplicationTests {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> f9fd764 (update 2)
 =======
 >>>>>>> 5ca8f7b (commit by admin)
+=======
+>>>>>>> 3c778f1 (Succes Test Cases Passed for few commits)
 	 @Autowired
 	    private MockMvc mockMvc;
      
@@ -79,6 +82,7 @@ class SpringappApplicationTests {
  			.andExpect(jsonPath("$").isArray())
  			.andReturn();
      }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -131,7 +135,37 @@ class SpringappApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+=======
+>>>>>>> 3c778f1 (Succes Test Cases Passed for few commits)
 
+     
+     @Test
+     public void test_case1() {
+     String directoryPath = "src/main/java/com/example/springapp/controller";
+      File directory = new File(directoryPath);
+      assertTrue(directory.exists() && directory.isDirectory());;
+      }
+     
+     @Test
+     public void test_case2() {
+     String filePath = "src/main/java/com/example/springapp/controller/TaskController.java";
+      File file = new File(filePath);
+      assertTrue(file.exists() && file.isFile());;
+      }
+     
+     @Test
+     public void test_case3() {
+     String directoryPath = "src/main/java/com/example/springapp/model";
+      File directory = new File(directoryPath);
+      assertTrue(directory.exists() && directory.isDirectory());;
+      }
+     
+     @Test
+     public void test_case4() {
+     String filePath = "src/main/java/com/example/springapp/model/Task.java";
+      File file = new File(filePath);
+      assertTrue(file.exists() && file.isFile());;
+      }
 }
 =======
 >>>>>>> 5ca8f7b (commit by admin)
