@@ -1,11 +1,29 @@
 package com.example.springapp;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.Assert.assertTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
-@SpringBootTest
+import java.io.File;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+
+@RunWith(SpringJUnit4ClassRunner.class) 
+@SpringBootTest(classes = SpringappApplication.class)
+@AutoConfigureMockMvc
 class SpringappApplicationTests {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -17,6 +35,8 @@ class SpringappApplicationTests {
 >>>>>>> 5ca8f7b (commit by admin)
 =======
 >>>>>>> 3c778f1 (Succes Test Cases Passed for few commits)
+=======
+>>>>>>> f9fd764 (update 2)
 	 @Autowired
 	    private MockMvc mockMvc;
      
@@ -69,6 +89,7 @@ class SpringappApplicationTests {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	@Test
 	void contextLoads() {
@@ -78,6 +99,8 @@ class SpringappApplicationTests {
 >>>>>>> f9fd764 (update 2)
 =======
 >>>>>>> 5ca8f7b (commit by admin)
+=======
+>>>>>>> f9fd764 (update 2)
 
      
      @Test
