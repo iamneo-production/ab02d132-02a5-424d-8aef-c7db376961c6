@@ -2,8 +2,8 @@ package com.example.springapp.controller;
 
 import java.util.List;
 
-import com.example.springapp.model.Task;
-import com.example.springapp.repository.TaskRepository;
+import com.example.springapp.model.User;
+import com.example.springapp.repository.UserRepository;
 import com.example.springapp.exception.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,19 +18,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/tasks")
-public class TaskController{
+@RequestMapping("/users")
+public class UserController{
     @Autowired
-    private TaskRepository taskRepository;
+    private UserRepository userRepository;
    
     @GetMapping
-    public List<Task> getAllTasks() {
-        return taskRepository.findAll();
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Task> getTaskById(@PathVariable(value = "id") int id) {
-        Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("task not found with id: " + id));
-        return ResponseEntity.ok(task);
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") int id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
+        return ResponseEntity.ok(user);
    }
 }
