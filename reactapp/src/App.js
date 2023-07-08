@@ -1,12 +1,12 @@
 
 import './App.css';
-//import UserForm from './components/UserForm';
-import TeammembersList from './components/TeammembersList';
+import UserList from './components/UserList';
+import UserForm from './components/UserForm';
 function App() {
   return (
-    <div className="App">
-     {/* <UserForm/> */}
-     <TeammembersList/>
+    <div>
+      <UserForm/>
+      <UserList/>
     </div>
   );
 }
