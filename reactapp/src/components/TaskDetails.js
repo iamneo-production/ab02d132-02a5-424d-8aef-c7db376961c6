@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 
 import '../styles/TaskDetails.css';
 
-import './TaskDetails.css';
-
 function TaskDetails() {
     const [data, setData] = useState({
       task: '',
@@ -26,12 +24,6 @@ function TaskDetails() {
       <div className="app-container">
         <center>
 
-
-          <h1>Assigning Task</h1>
-
-          <h2>Employee ID:</h2>
-
-=======
           <h1>Assigning Task</h1>
           <h2>Employee ID:</h2>
 
@@ -48,9 +40,6 @@ function TaskDetails() {
               />
             </div>
 
-
-
-
             <div className="input-row">
               <label className="input-label">Description:</label>
               <input
@@ -63,8 +52,6 @@ function TaskDetails() {
               />
             </div>
 
-
-
             <div className="input-row">
               <label className="input-label">Due Date:</label>
               <input
@@ -76,8 +63,6 @@ function TaskDetails() {
               />
             </div>
 
-
-
             <div className="input-button">
               <input
                 type="submit"
@@ -86,13 +71,9 @@ function TaskDetails() {
               />
             </div>
 
-
           </form>
-
         </center>
-
       </div>
-
 
     );
   }
