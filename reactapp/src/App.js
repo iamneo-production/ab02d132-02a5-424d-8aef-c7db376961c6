@@ -9,11 +9,8 @@ function App() {
   return (
     <>
       <Login></Login>
-
       <UserForm/>
-
-      <UserList/>
-      
+      <UserList/>      
       <UserList1/>
       <HomePageNavbar/>
     </>
