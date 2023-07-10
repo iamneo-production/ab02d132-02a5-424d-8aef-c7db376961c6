@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../styles/Todo.css";
-
 function Todo() {
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
