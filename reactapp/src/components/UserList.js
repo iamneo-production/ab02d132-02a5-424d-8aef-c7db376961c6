@@ -5,15 +5,17 @@ function UserList() {
     <table className="table table-bordered">
       <thead className="table-primary">
         <tr>
-          <th scope="col">
-            <center>Name</center>
-          </th>
+          
           <th scope="col">
             <center>EmpID</center>
           </th>
           <th scope="col">
-            <center>Status</center>
+            <center>Name</center>
           </th>
+          <th scope="col">
+            <center>Email</center>
+          </th>
+          
           <th scope="col">
             <center>Role</center>
           </th>
@@ -24,27 +26,29 @@ function UserList() {
       </thead>
       <tbody>
         <tr>
-          <td>
-            <center>
-              <p className="fw-bold mb-1">Alex Ray</p>
-              <p className="text-muted mb-0">alex.ray@gmail.com</p>
-            </center>
-          </td>
-          <td>
+        <td>
             <center>
               <p className="fw-bold mb-1">001</p>
             </center>
           </td>
+          
           <td>
             <center>
-              <span className="badge bg-success">
-                <center>Active</center>
-              </span>
+              <p className="fw-bold mb-1">Alex Ray</p>
+             
             </center>
           </td>
+
+          <td>
+            <center>
+              <p className="text-muted mb-0">alex.ray@gmail.com</p>
+            </center>
+          </td>
+         
           <td>
             <center>Team Member</center>
           </td>
+
           <td>
             <div>
               <i className="fas fa-pencil-alt text-primary me-2"></i>
