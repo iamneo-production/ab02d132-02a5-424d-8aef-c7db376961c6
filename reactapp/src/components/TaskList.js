@@ -1,5 +1,5 @@
 import React from 'react';
-import './TaskList.css';
+// import './TaskList.css';
 import Switch from 'react-switch';
 
 const TaskDetails = () => {
