@@ -11,7 +11,7 @@ function UserList1() {
           <th scope='col'>Task</th>      
           <th scope='col'>Actions</th>
         </tr>
-      </MDBTableHead>
+      </MDBTableHead >
       <MDBTableBody>
         <tr>
           <td>
