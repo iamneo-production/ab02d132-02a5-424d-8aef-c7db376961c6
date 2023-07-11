@@ -56,6 +56,99 @@ function UserList() {
             </div>
           </td>
         </tr>
+        <tr>
+        <td>
+            <center>
+              <p className="fw-bold mb-1">001</p>
+            </center>
+          </td>
+          
+          <td>
+            <center>
+              <p className="fw-bold mb-1">Alex Ray</p>
+             
+            </center>
+          </td>
+
+          <td>
+            <center>
+              <p className="text-muted mb-0">alex.ray@gmail.com</p>
+            </center>
+          </td>
+         
+          <td>
+            <center>Team Member</center>
+          </td>
+
+          <td>
+            <div>
+              <i className="fas fa-pencil-alt text-primary me-2"></i>
+              <i className="fas fa-trash text-danger"></i>
+            </div>
+          </td>
+        </tr>
+        <tr>
+        <td>
+            <center>
+              <p className="fw-bold mb-1">001</p>
+            </center>
+          </td>
+          
+          <td>
+            <center>
+              <p className="fw-bold mb-1">Alex Ray</p>
+             
+            </center>
+          </td>
+
+          <td>
+            <center>
+              <p className="text-muted mb-0">alex.ray@gmail.com</p>
+            </center>
+          </td>
+         
+          <td>
+            <center>Team Member</center>
+          </td>
+
+          <td>
+            <div>
+              <i className="fas fa-pencil-alt text-primary me-2"></i>
+              <i className="fas fa-trash text-danger"></i>
+            </div>
+          </td>
+        </tr>
+        <tr>
+        <td>
+            <center>
+              <p className="fw-bold mb-1">001</p>
+            </center>
+          </td>
+          
+          <td>
+            <center>
+              <p className="fw-bold mb-1">Alex Ray</p>
+             
+            </center>
+          </td>
+
+          <td>
+            <center>
+              <p className="text-muted mb-0">alex.ray@gmail.com</p>
+            </center>
+          </td>
+         
+          <td>
+            <center>Team Member</center>
+          </td>
+
+          <td>
+            <div>
+              <i className="fas fa-pencil-alt text-primary me-2"></i>
+              <i className="fas fa-trash text-danger"></i>
+            </div>
+          </td>
+        </tr>
         
        
           
