@@ -22,3 +22,8 @@ function App() {
       <TaskList/>  
     </>
 
+    
+  );
+}
+export default App;
+  
