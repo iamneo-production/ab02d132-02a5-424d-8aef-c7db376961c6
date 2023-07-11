@@ -16,7 +16,6 @@ function App() {
       <UserForm/>
       <UserList/>      
       <UserList1/>
-      <HomePageNavbar/>
     </>
 
   );
