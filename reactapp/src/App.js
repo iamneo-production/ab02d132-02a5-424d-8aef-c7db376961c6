@@ -12,9 +12,9 @@ function App() {
   return (
     <>
       <HomePageNavbar/>
-      
-     
+        
       <Login></Login>
+
       <Todo></Todo>
 
       <UserForm/>
@@ -22,6 +22,7 @@ function App() {
       <UserList/> 
            
       <UserList1/>
+
       <TaskList/>
    
    
