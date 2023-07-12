@@ -7,13 +7,15 @@ import UserList1 from './components/UserList1';
 import HomePageNavbar from './components/HomePageNavbar';
 import TaskList from './components/TaskList';
 import TeamLeaderNavbar from './components/TeamLeaderNavbar';
+import TeamMemberNavbar from './components/TeamMemberNavbar';
 
 
 function App() {
   return (
     <>
       <HomePageNavbar/>
-      <TeamLeaderNavbar/>      
+      <TeamLeaderNavbar/>
+      <TeamMemberNavbar/>      
       <Login></Login>
       <Todo></Todo>
       <UserForm/>
