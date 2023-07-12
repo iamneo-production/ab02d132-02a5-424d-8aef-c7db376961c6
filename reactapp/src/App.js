@@ -6,12 +6,14 @@ import { Login } from './components/Login';
 import UserList1 from './components/UserList1';
 import HomePageNavbar from './components/HomePageNavbar';
 import TaskList from './components/TaskList';
+import TeamLeaderNavbar from './components/TeamLeaderNavbar';
 
 
 function App() {
   return (
     <>
-      <HomePageNavbar/>      
+      <HomePageNavbar/>
+      <TeamLeaderNavbar/>      
       <Login></Login>
       <Todo></Todo>
       <UserForm/>
