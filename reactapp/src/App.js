@@ -11,21 +11,13 @@ import TaskList from './components/TaskList';
 function App() {
   return (
     <>
-      <HomePageNavbar/>
-        
+      <HomePageNavbar/>      
       <Login></Login>
-
       <Todo></Todo>
-
       <UserForm/>
-
-      <UserList/> 
-           
+      <UserList/>           
       <UserList1/>
-
-      <TaskList/>
-   
-   
+      <TaskList/>  
     </>
 
   );
