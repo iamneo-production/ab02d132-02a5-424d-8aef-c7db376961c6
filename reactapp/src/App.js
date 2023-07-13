@@ -8,8 +8,6 @@ import HomePageNavbar from './components/HomePageNavbar';
 import TaskList from './components/TaskList';
 import TeamLeaderNavbar from './components/TeamLeaderNavbar';
 import TeamMemberNavbar from './components/TeamMemberNavbar';
-
-
 function App() {
   return (
     <>
