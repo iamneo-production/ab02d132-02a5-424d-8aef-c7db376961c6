@@ -23,20 +23,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 class SpringappApplicationTests {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f9fd764 (update 2)
-=======
->>>>>>> 5ca8f7b (commit by admin)
-=======
->>>>>>> 3c778f1 (Succes Test Cases Passed for few commits)
-=======
->>>>>>> f9fd764 (update 2)
 	 @Autowired
 	    private MockMvc mockMvc;
      
@@ -86,21 +72,6 @@ class SpringappApplicationTests {
  			.andExpect(jsonPath("$").isArray())
  			.andReturn();
      }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	@Test
-	void contextLoads() {
-	}
->>>>>>> cd76e75 ( update)
-=======
->>>>>>> f9fd764 (update 2)
-=======
->>>>>>> 5ca8f7b (commit by admin)
-=======
->>>>>>> f9fd764 (update 2)
 
      
      @Test
@@ -131,22 +102,3 @@ class SpringappApplicationTests {
       assertTrue(file.exists() && file.isFile());;
       }
 }
-<<<<<<< HEAD
-package com.example.springapp;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class SpringappApplicationTests {
-=======
->>>>>>> cd76e75 ( update)
-	@Test
-	void contextLoads() {
-	}
-=======
->>>>>>> 3c778f1 (Succes Test Cases Passed for few commits)
-
-}
-=======
->>>>>>> 5ca8f7b (commit by admin)
