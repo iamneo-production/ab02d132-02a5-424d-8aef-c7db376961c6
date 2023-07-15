@@ -25,7 +25,7 @@ function UserForm() {
 
     <MDBCard className='my-5 cascading-right' style={{background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)'}}>
     <MDBCardBody className='p-5 shadow-5 text-center'>
-           <h2 className="fw-bold  mb-5">Create User Account</h2>
+           <h2 className="fw-bold  mb-5"> User Account</h2>
         
 
            <MDBInput wrapperClass='mb-4' label='UserName' id='form3' type='text'
