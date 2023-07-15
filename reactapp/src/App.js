@@ -8,6 +8,8 @@ import HomePageNavbar from './components/HomePageNavbar';
 import TaskList from './components/TaskList';
 import TeamLeaderNavbar from './components/TeamLeaderNavbar';
 import TeamMemberNavbar from './components/TeamMemberNavbar';
+import ViewUser from './components/ViewUser';
+import EditUser from './components/EditUser';
 function App() {
   return (
     <>
@@ -16,10 +18,13 @@ function App() {
       <TeamMemberNavbar/>      
       <Login></Login>
       <Todo></Todo>
-      <UserForm/>
+      
       <UserList/>           
       <UserList1/>
       <TaskList/>  
+      <ViewUser/>
+      <EditUser/>
+      <UserForm/>
     </>
 
     

@@ -11,7 +11,7 @@ import {
   MDBRadio
 } from 'mdb-react-ui-kit';
 
-function UserForm() {
+function EditUser() {
    
     
 
@@ -25,7 +25,7 @@ function UserForm() {
 
     <MDBCard className='my-5 cascading-right' style={{background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)'}}>
     <MDBCardBody className='p-5 shadow-5 text-center'>
-           <h2 className="fw-bold  mb-5">Create Account</h2>
+           <h2 className="fw-bold  mb-5">Edit User Account</h2>
         
 
            <MDBInput wrapperClass='mb-4' label='UserName' id='form3' type='text'
@@ -33,8 +33,7 @@ function UserForm() {
            
            <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='Email'
            />
-           <MDBInput wrapperClass='mb-4' label='Password' id='form3' type='Password'
-            />
+           
            
           
  
@@ -54,9 +53,9 @@ function UserForm() {
 
         
 <>
-    <MDBBtn className='mx-2 w-25' size='md 'wrapperTag='span'margin>Create</MDBBtn>
+    <MDBBtn className='mx-2 w-25' size='md 'wrapperTag='span'margin>Edit</MDBBtn>
       
-      <MDBBtn MDBBtn className="btn btn-danger mx-2 w-25" size='md 'wrapperTag='span' >
+      <MDBBtn className="btn btn-danger mx-2 w-25" size='md 'wrapperTag='span' >
        Cancel
       </MDBBtn>
 </>
@@ -80,4 +79,4 @@ function UserForm() {
   )
 }
 
-export default UserForm
+export default EditUser
