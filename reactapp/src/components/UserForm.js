@@ -16,15 +16,16 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
 function UserForm() {
+
   function sendEmail(e){
-  e.preventDefault();
-  emailjs.sendForm('service_gdedojf',
-  'template_jy1b2xb',
-  e.target,
-  'lyPV9ADs50wKONbnC'
-  ).then(res=>{
-    console.log(res);
-  }).catch(err=>console.log(err));
+    e.preventDefault();
+    emailjs.sendForm('service_gdedojf',
+    'template_jy1b2xb',
+    e.target,
+    'lyPV9ADs50wKONbnC'
+    ).then(res=>{
+      console.log(res);
+    }).catch(err=>console.log(err));
   }
 
   
@@ -40,6 +41,10 @@ function UserForm() {
       userrole:""
     })
    
+    const client = axios.create({
+      baseURL: "https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/",
+    });
+
     const{username,emailid,password,userrole}=user
 
     const onInputChange=(e)=>{
@@ -48,8 +53,11 @@ function UserForm() {
 
     const onSubmit=async (e)=>{
       e.preventDefault();
-      console.log(user)
-      await axios.post("http://localhost:8080/user",user)
+      //console.log(user)
+      const { data } = await client.post("/api/users/add",user)
+      console.log(data);
+      
+      sendEmail(e);
       navigate("/")
     };
  
@@ -58,7 +66,7 @@ function UserForm() {
   return (
     <div className="App">
       
-      <form onSubmit={(e) => { onSubmit(e); sendEmail(e); }}>
+      <form onSubmit={(e) => { onSubmit(e); }}>
 <MDBContainer fluid className='my-1 w-50'>
 <MDBRow className='g-0 align-items-center'>
 <MDBCol col='6'>
