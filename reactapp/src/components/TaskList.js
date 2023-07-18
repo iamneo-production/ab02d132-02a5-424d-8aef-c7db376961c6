@@ -22,7 +22,7 @@ const TaskDetails = () => {
         <div>
             <center>
                 <div className="heading">
-                    <h3>TASK DETAILS</h3>
+                    <h7>TASK DETAILS</h7>
                 </div>
                 <table className="table">
                     <thead className="thead">
