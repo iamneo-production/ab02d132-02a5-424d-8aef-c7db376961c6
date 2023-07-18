@@ -1,3 +1,11 @@
+com/example/springapp/exception/UserNotFoundAdvice.class
 com/example/springapp/SpringappApplication.class
-Task.class
-TaskController.class
+com/example/springapp/exception/ResourceNotFoundException.class
+com/example/springapp/service/UserService.class
+com/example/springapp/model/Task.class
+com/example/springapp/repository/TaskRepository.class
+com/example/springapp/controller/TaskController.class
+com/example/springapp/exception/UserNotFoundException.class
+com/example/springapp/controller/UserController.class
+com/example/springapp/repository/UserRepository.class
+com/example/springapp/model/User.class
