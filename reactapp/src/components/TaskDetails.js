@@ -2,6 +2,11 @@ import React, {useState} from 'react';
 
 import '../styles/TaskDetails.css';
 
+import './TaskDetails.css';
+
+
+import '../styles/TaskDetails.css';
+
 function TaskDetails() {
     const [data, setData] = useState({
       task: '',
