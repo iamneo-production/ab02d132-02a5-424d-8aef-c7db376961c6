@@ -17,6 +17,12 @@ function App() {
       <TeamLeaderNavbar/>
       <TeamMemberNavbar/>      
       <Login></Login>
+      <UserForm/>
+      <EditUser/>
+      <Login/>
+      <ViewUser/>
+      <UserList/>
+      <UserList1/>
     </>
 
     
