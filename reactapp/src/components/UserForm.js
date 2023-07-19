@@ -1,106 +1,132 @@
 import React,{useState} from 'react'
-
+import { generate } from '@wcj/generate-password';
+import emailjs from '@emailjs/browser';
 import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBRow,
-  MDBCol,
-  MDBRadio
-} from 'mdb-react-ui-kit';
+   
+    MDBContainer,
+    MDBCard,
+    MDBCardBody,
+    MDBInput,
+    MDBRow,
+    MDBCol,
+  
+  } from 'mdb-react-ui-kit';
+import { MDBRadio } from 'mdb-react-ui-kit';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 function UserForm() {
-    const [value, setValue] = useState('')
-    const [value1, setValue1] = useState('')
-    const [value2, setValue2] = useState('')
-    const [value3, setValue3] = useState('')
-    const [value4, setValue4] = useState('')
-    const [displaycolor,setcolor] = useState('')
-    const[task,setTask]=useState([])
-   const handleSubmit=(event)=>{
-        if(value!==''){
-            setTask([...task,value2,value3,value4,value,value1,displaycolor])
-            setValue('')
-            setValue1('')
-            setcolor('')
 
-        }
-       event.preventDefault(); 
+  function sendEmail(e){
+    e.preventDefault();
+    emailjs.sendForm('service_gdedojf',
+    'template_jy1b2xb',
+    e.target,
+    'lyPV9ADs50wKONbnC'
+    ).then(res=>{
+      console.log(res);
+    }).catch(err=>console.log(err));
+  }
+
+  
+  generate({ special: false, numeric: false });
+
+
+
+  let navigate=useNavigate()
+    const [user, setUser] = useState({
+      username:"",
+      emailid:"",
+     password:"",
+      userrole:""
+    })
+   
+    const client = axios.create({
+      baseURL: "https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/",
+    });
+
+    const{username,emailid,password,userrole}=user
+
+    const onInputChange=(e)=>{
+              setUser({...user,[e.target.name]:e.target.value})
+    }
+
+    const onSubmit=async (e)=>{
+      e.preventDefault();
+      //console.log(user)
+      const { data } = await client.post("/api/users/add",user)
+      console.log(data);
+      
+      sendEmail(e);
+      navigate("/")
     };
+ 
     
-//   let status=["Assigned","Inprogress","Completed"]; 
+
   return (
     <div className="App">
-      <form>
-        
+      
+      <form onSubmit={(e) => { onSubmit(e); }}>
 <MDBContainer fluid className='my-1 w-50'>
 <MDBRow className='g-0 align-items-center'>
 <MDBCol col='6'>
 
     <MDBCard className='my-5 cascading-right' style={{background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)'}}>
     <MDBCardBody className='p-5 shadow-5 text-center'>
-           <h2 className="fw-bold  mb-5"> User Account</h2>
+           <h2 className="fw-bold  mb-5"> Create User Account</h2>
         
-
+          
            <MDBInput wrapperClass='mb-4' label='UserName' id='form3' type='text'
-           value={value2}
-           onChange={(e)=>setValue2(e.target.value)} />
+           name='username'
+           value={username} 
+           onChange={(e)=>onInputChange(e)}
+          />
            
-           <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='Email'
-           value={value4}
-           onChange={(e)=>setValue4(e.target.value)} />
-           <MDBInput wrapperClass='mb-4' label='Password' id='form3' type='Password'
-           value={value3}
-           onChange={(e)=>setValue3(e.target.value)} />
+           <MDBInput wrapperClass='mb-4' label='Email' id='form3' type='text'
+           name='emailid'
+           value={emailid}
+           onChange={(e)=>onInputChange(e)}
+            />
            
-           {/* <select class="form-select" aria-label="Default select example">
-  <option selected>Gender</option>
-  <option value="1">Female</option>
-  <option value="2">Male</option>
-  <option value="3">Other</option>
-</select> */}
-  <MDBInput wrapperClass='mb-4' label='Task' id='form3' type='text' 
-        value={value}
-        onChange={(e)=>setValue(e.target.value)}
-        />
-        <MDBInput wrapperClass='mb-4' label='DueDate' id='form4' type='date'
-        value1={value1}
-        onChange={(e)=>setValue1(e.target.value)}
-        />
-      
-       {/* {status.map(result=>(
-         <>
- <MDBRadio btn btnColor='secondary' id='btn-radio2' name='options' wrapperTag='span' label={result}  onChange={(e)=>setcolor(e.target.value)} value={result}/>
- 
- </>
-       ))}
+          
+           <MDBInput
+  wrapperClass='mb-4'
+  label='Password'
+  id='form3'
+  type='password'
+  name='password'
+  value={password}
+  onFocus={(e) => {
+    e.preventDefault();
+    const generatedPassword = generate({ special: false, numeric: false });
+    setUser({ ...user, password: generatedPassword });
+  }}
+/>
        
-     */}
+      
+       
      <>
-      <MDBRadio btn btnColor='secondary' id='btn-radio1' name='options' wrapperTag='span' label="Leader" onChange={(e)=>setcolor(e.target.value)} value="Leader"/>
+      <MDBRadio btn btnColor='secondary' id='btn-radio1' name='userrole' wrapperTag='span' label="Leader"   value="Leader"  checked={userrole === 'Leader'} onChange={(e)=>onInputChange(e)}/>
 
-      <MDBRadio btn btnColor='secondary' id='btn-radio2' name='options' wrapperClass='mx-2' wrapperTag='span' label='Member' onChange={(e)=>setcolor(e.target.value)}  value="Member"/>
+      <MDBRadio btn btnColor='secondary' id='btn-radio2' name='userrole' wrapperClass='mx-2' wrapperTag='span' label="Member" value="Member" checked={userrole === 'Member'}  onChange={(e)=>onInputChange(e)}/>
 
-      {/* <MDBRadio btn btnColor='secondary' id='btn-radio3' name='options' wrapperTag='span' label='InProgress' onChange={(e)=>setcolor(e.target.value)} value="Inprogress"/> */}
+     
       </>
    <br/>
     <br/>
    
 
-        {/* <div className='d-flex justify-content-center mb-4'>
-          <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Confirm changes' />
-        </div> */}
+       
 <>
-    <MDBBtn className='mx-2 w-25' size='md 'wrapperTag='span'margin onClick={handleSubmit}>Create</MDBBtn>
-      
-      <MDBBtn MDBBtn className='mx-2 w-25' size='md 'wrapperTag='span' onClick={handleSubmit}>
-       Update
-      </MDBBtn>
+<button type="submit" className="btn btn-primary mx-2 w-25">
+              Create
+            </button>
+            <Link className="btn btn-danger mx-2 w-25" to="/">
+              Cancel
+            </Link>
 </>
         
-     
+
     
         <div className="text-center">
              </div>
@@ -110,17 +136,14 @@ function UserForm() {
       </MDBCol>
       </MDBRow>
       </MDBContainer>
-      <div>
-         <ul>
-      {task.map(task=><li  value={task}>{task}</li>)}
-      </ul>
-      </div>
+     
      
       </form>
      
     </div>
  
   )
-}
+    };
 
 export default UserForm
+
