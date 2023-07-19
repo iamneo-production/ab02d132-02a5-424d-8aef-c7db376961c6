@@ -1,8 +1,7 @@
-import React from 'react';
-import './TaskList.css';
+import React from 'react'
 import Switch from 'react-switch';
 
-const TaskDetails = () => {
+const TaskList = () => {
     const [Data] = React.useState([
         {
             taskid: "1",
@@ -55,4 +54,4 @@ const TaskDetails = () => {
     );
 };
 
-export default TaskDetails;
+export default TaskList;
