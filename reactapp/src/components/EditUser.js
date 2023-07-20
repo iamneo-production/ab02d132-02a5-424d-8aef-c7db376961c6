@@ -1,8 +1,7 @@
-import React,{useState} from 'react'
-import { generate } from '@wcj/generate-password';
+import React,{useEffect, useState} from 'react'
 import emailjs from '@emailjs/browser';
 import {
-   
+    
     MDBContainer,
     MDBCard,
     MDBCardBody,
@@ -13,67 +12,65 @@ import {
   } from 'mdb-react-ui-kit';
 import { MDBRadio } from 'mdb-react-ui-kit';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
-function UserForm() {
-
+function EditUser() {
   function sendEmail(e){
     e.preventDefault();
     emailjs.sendForm('service_gdedojf',
-    'template_jy1b2xb',
+    'template_qz1h9um',
     e.target,
     'lyPV9ADs50wKONbnC'
     ).then(res=>{
       console.log(res);
     }).catch(err=>console.log(err));
-  }
-
+    }
   
-  generate({ special: false, numeric: false });
-
 
 
   let navigate=useNavigate()
+  const {id}=useParams();
     const [user, setUser] = useState({
       username:"",
       emailid:"",
-     password:"",
+      
       userrole:""
     })
-   
-    const client = axios.create({
-      baseURL: "https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/",
-    });
+  
 
-    const{username,emailid,password,userrole}=user
+    const{username,emailid,userrole}=user
 
     const onInputChange=(e)=>{
               setUser({...user,[e.target.name]:e.target.value})
     }
 
+    useEffect(()=>{
+        loadUser();
+}, []);
+
     const onSubmit=async (e)=>{
       e.preventDefault();
-      //console.log(user)
-      const { data } = await client.post("/api/users/add",user)
-      console.log(data);
-      
-      sendEmail(e);
+      console.log(user)
+      await axios.put(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io//api/users/${id}`,user)
       navigate("/")
     };
- 
+ const loadUser =async ()=>{
+    const result=await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io//api/users/${id}`)
+    setUser(result.data)
+ }
     
 
   return (
     <div className="App">
       
-      <form onSubmit={(e) => { onSubmit(e); }}>
+      <form onSubmit={(e) => { onSubmit(e); sendEmail(e); }}>
 <MDBContainer fluid className='my-1 w-50'>
 <MDBRow className='g-0 align-items-center'>
 <MDBCol col='6'>
 
     <MDBCard className='my-5 cascading-right' style={{background: 'hsla(0, 0%, 100%, 0.55)',  backdropFilter: 'blur(30px)'}}>
     <MDBCardBody className='p-5 shadow-5 text-center'>
-           <h2 className="fw-bold  mb-5"> Create User Account</h2>
+           <h2 className="fw-bold  mb-5"> Edit User Account</h2>
         
           
            <MDBInput wrapperClass='mb-4' label='UserName' id='form3' type='text'
@@ -87,21 +84,10 @@ function UserForm() {
            value={emailid}
            onChange={(e)=>onInputChange(e)}
             />
+            
            
           
-           <MDBInput
-  wrapperClass='mb-4'
-  label='Password'
-  id='form3'
-  type='password'
-  name='password'
-  value={password}
-  onFocus={(e) => {
-    e.preventDefault();
-    const generatedPassword = generate({ special: false, numeric: false });
-    setUser({ ...user, password: generatedPassword });
-  }}
-/>
+  
        
       
        
@@ -118,10 +104,10 @@ function UserForm() {
 
        
 <>
-<button type="submit" className="btn btn-primary mx-2 w-25">
-              Create
+<button type="submit" className="btn btn-outline-primary mx-2 w-25">
+              Update
             </button>
-            <Link className="btn btn-danger mx-2 w-25" to="/">
+            <Link className="btn btn-outline-danger mx-2 w-25" to="/">
               Cancel
             </Link>
 </>
@@ -145,5 +131,5 @@ function UserForm() {
   )
     };
 
-export default UserForm
+export default EditUser
 
