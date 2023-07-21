@@ -35,7 +35,7 @@ function ViewUser() {
    
 
    const loadUser=async()=>{
-    const result=await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io//api/users/${id}`)
+    const result=await axios.get(`https://8080-cfeacaaecbacecbefdccdeaeaadbdbabf.project.examly.io//api/users/${id}`)
     setUser(result.data)
    }
    
@@ -58,7 +58,7 @@ function ViewUser() {
         <MDBListGroup style={{ minWidthL: '22rem' }} light>
       <MDBListGroupItem><b>Name:</b>  {user.username}</MDBListGroupItem>
       <MDBListGroupItem><b>Email:</b>  {user.emailid}</MDBListGroupItem>
-      <MDBListGroupItem><b>Task:</b>{user.usertask}</MDBListGroupItem>
+    
     
       <MDBListGroupItem><b>Role:</b>{user.userrole}</MDBListGroupItem>
     </MDBListGroup>
