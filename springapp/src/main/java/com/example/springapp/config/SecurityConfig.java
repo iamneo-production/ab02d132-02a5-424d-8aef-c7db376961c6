@@ -66,7 +66,7 @@ public class SecurityConfig{
 			.disable()
 			.authorizeHttpRequests()
 			.antMatchers(WHITE_LIST_URL).permitAll()
-			// .antMatchers().hasAuthority("Admin")
+			// .antMatchers().hasAuthority("Admin") 
 			.anyRequest()
 			.authenticated()
 			.and()
