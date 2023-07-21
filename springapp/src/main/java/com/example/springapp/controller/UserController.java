@@ -19,7 +19,7 @@ import com.example.springapp.service.UserService;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin("https://8081-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/")
+@CrossOrigin("https://8081-cfeacaaecbacecbefdccdeaeaadbdbabf.project.examly.io/")
 public class UserController {
 
     private final UserService userService;
