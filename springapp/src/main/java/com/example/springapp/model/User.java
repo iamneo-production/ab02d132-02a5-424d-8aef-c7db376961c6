@@ -35,7 +35,6 @@ public class User {
 	public void setEmailid(String emailid) {
 		this.emailid = emailid;
 	}
-	
 	public String getUserrole() {
 		return userrole;
 	}
