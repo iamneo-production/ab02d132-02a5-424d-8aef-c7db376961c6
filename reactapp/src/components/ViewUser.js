@@ -35,7 +35,7 @@ function ViewUser() {
    
 
    const loadUser=async()=>{
-    const result=await axios.get(`https://8080-cfeacaaecbacecbefdccdeaeaadbdbabf.project.examly.io//api/users/${id}`)
+    const result=await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io//api/users/${id}`)
     setUser(result.data)
    }
    
