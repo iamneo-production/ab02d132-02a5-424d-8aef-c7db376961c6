@@ -19,7 +19,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"PORT=8081 react-scripts start\" \"cd .. && cd springapp && mvn spring-boot:run\"",
+    "start": "concurrently \"PORT=8081 react-scripts start\" \"cd .. && cd springapp && mvn clean install && mvn spring-boot:run -DskipTests \"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
