@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBContainer, MDBNavbar, MDBNavbarBrand } from 'mdb-react-ui-kit';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { doLogout, isLoggedIn } from '../auth';
+
 
 function UserList() {
 
@@ -38,6 +40,24 @@ function UserList() {
     await axios.delete(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
     loadUsers()
   }
+  const navigate = useNavigate();
+
+  const [login, setLogin] = useState(false);
+  useEffect(() => {
+    setLogin(isLoggedIn());
+  }, [login]);
+
+  if (!login) {
+    navigate('/login');
+  }
+
+  const handleLogout = () => {
+    if (login) {
+      doLogout();
+      navigate('/login');
+    }
+  };
+
 
   return (
     <>
@@ -46,7 +66,7 @@ function UserList() {
           <MDBNavbarBrand tag="span" className='mb-0 h1'>Virtusa Task Management</MDBNavbarBrand>
 
           <form className='d-flex input-group w-auto'>
-            <Link className="btn btn-outline-primary" to="/adduser">
+            <Link className="btn btn-primary" to="/adduser">
               Create User
             </Link>
             <select class="form-select mx-2 w-25" aria-label="Default select example" value={searchCategory} onChange={(e) => setSearchCategory(e.target.value)}>
@@ -56,7 +76,7 @@ function UserList() {
            </select>
             <input type='search' className='form-control mx-2 w-25' placeholder='Search...' aria-label='Search' value={searchText} onChange={(e) => setSearchText(e.target.value)} />
             <button className="btn btn-outline-danger mx-2" onClick={handleSearch}>Back</button>
-            <MDBBtn >Logout</MDBBtn>
+            <MDBBtn onClick={handleLogout}>Logout</MDBBtn>
           </form>
 
         </MDBContainer>
