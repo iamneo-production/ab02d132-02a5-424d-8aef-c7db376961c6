@@ -22,12 +22,8 @@ import com.example.springapp.service.UserService;
 @CrossOrigin("https://8081-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/")
 public class UserController {
 
-    private final UserService userService;
-
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService;
 
     @PostMapping("/add")
     public ResponseEntity<User> createUser(@RequestBody User newUser) {
