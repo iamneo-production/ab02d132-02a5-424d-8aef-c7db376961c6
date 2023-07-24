@@ -32,12 +32,12 @@ function UserList() {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users")
+    const result = await axios.get("https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/users")
     setUsers(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    await axios.delete(`https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
     loadUsers()
   }
   const navigate = useNavigate();

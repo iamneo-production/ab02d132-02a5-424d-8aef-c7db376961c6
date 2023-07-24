@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/Styles.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -8,7 +9,7 @@ const Addtask = ({ modal, toggle, save }) => {
   const [taskId, setTaskId] = useState('');
   const [taskName, setTaskName] = useState('');
   const [description, setDescription] = useState('');
-  const [dueDate, setDueDate] = useState(null);
+  const [duedate, setDueDate] = useState('');
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
@@ -18,7 +19,10 @@ const Addtask = ({ modal, toggle, save }) => {
     } else if (name === 'taskName') {
       setTaskName(value);
     } else if (name === 'description') {
-      setDescription(value);
+      setDescription(value); 
+    } 
+    else if (name === 'duedate') {
+      setDueDate(value); 
     } else if (name === 'status') {
       setStatus(value);
     }
@@ -30,16 +34,14 @@ const Addtask = ({ modal, toggle, save }) => {
 
   const handleSave = async () => {
     const taskObj = {
-      taskId: taskId,
       taskName: taskName,
       taskDescription: description,
-      dueDate: "2023-08-31",
+      dueDate: duedate,
       status: status,
-      assignedBy: "krishna"
     };
     console.log(taskObj,"-----------");
     try {
-      const response = await axios.post('http://localhost:8080/api/tasks', taskObj);
+      const response = await axios.post('https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/add', taskObj);
       save(response.data);
     } catch (error) {
       console.log(error);
@@ -53,18 +55,6 @@ const Addtask = ({ modal, toggle, save }) => {
       <ModalHeader toggle={toggle}>Add Task</ModalHeader>
       <ModalBody>
         <form>
-          <div className="form-group">
-            <label htmlFor="taskId">Task Id</label>
-            <input
-              type="text"
-              className="form-control"
-              required
-              value={taskId}
-              onChange={handleChange}
-              name="taskId"
-              id="taskId"
-            />
-          </div>
           <div className="form-group">
             <label htmlFor="taskName">Task Name</label>
             <input
@@ -94,7 +84,7 @@ const Addtask = ({ modal, toggle, save }) => {
             <br />
             <DatePicker
               className="form-control"
-              selected={dueDate}
+              selected={duedate}
               onChange={handleDueDateChange}
               name="dueDate"
               id="dueDate"
