@@ -7,6 +7,10 @@ import UserList from './components/UserList';
 import UserForm from './components/UserForm';
 import EditUser from './components/EditUser';
 import ViewUser from './components/ViewUser';
+import Dashboard from './components/Dashboard';
+import EditTaskPage from './components/EditTaskPage';
+import AssignTask from './components/AssignTask';
+import Report from './components/Report';
 function App() {
   return (
     <>
@@ -27,6 +31,11 @@ function App() {
        <Route exact path='/adduser' element={<UserForm/>}/>
        <Route exact path="/edituser/:id" element={<EditUser/>}/>
        <Route exact path="/viewuser/:id" element={<ViewUser />} />
+       <Route path={"/Leader"} element={<Dashboard />} />
+          
+          <Route path={"/EditTaskPage/:id"} element={<EditTaskPage/>}/>
+          <Route path={"/AssignTask/:id"} element={<AssignTask/>}></Route>
+          <Route path={"/Report/:id"} element={<Report/>}></Route>
      </Routes>
 
      </Router>
