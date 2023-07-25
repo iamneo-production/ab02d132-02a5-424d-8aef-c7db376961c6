@@ -1,63 +1,95 @@
 package com.example.springapp.model;
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "task")
 public class Task {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
-  private String name;
 
-  @Override
-  public String toString() {
-    return "Task [id=" + id + ", name=" + name + ", email=" + email + ", tasks=" + tasks + "]";
-  }
 
-  private String email;
-  private List<Task> tasks;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long taskId;
 
-  public Task(int id, String name, String email, List<Task> tasks) {
-    this.id = id;
-    this.name = name;
-    this.email = email;
-    this.tasks = tasks;
-  }
+    private String taskName;
+    private LocalDate dueDate;
+    private String taskDescription;
+    private String status;
+    private String assignedTo;
 
-  public Task() {
-  }
 
-  public int getId() {
-    return id;
-  }
+// Constructors, getters, and setters
 
-  public void setId(int id) {
-    this.id = id;
-  }
 
-  public String getName() {
-    return name;
-  }
 
-  public void setName(String name) {
-    this.name = name;
-  }
 
-  public String getEmail() {
-    return email;
-  }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
 
-  public List<Task> getTasks() {
-    return tasks;
-  }
 
-  public void setTasks(List<Task> tasks) {
-    this.tasks = tasks;
-  }
+
+
+    public Long getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(long taskId) {
+        this.taskId = taskId;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
+
+    public void setTaskDescription(String taskDescription) {
+        this.taskDescription = taskDescription;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getStatus() { return status; }
+
+    public void setStatus(String status) { this.status = status; }
+
+    public String getAssignedTo() { return assignedTo; }
+
+    public void setAssignedTo(String assignedTo) { this.assignedTo = assignedTo; }
+
+
+
+    @Override
+    public String toString() {
+        return "Task{"
+                + "name='" + taskName + '\'' +
+                ", description='" + taskDescription + '\'' +
+                ", dueDate='" + dueDate + '\'' +
+
+                '}';
+    }
+
 }

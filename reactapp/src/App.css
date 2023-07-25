@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -35,4 +35,42 @@
   to {
     transform: rotate(360deg);
   }
+}*/
+.table-container {
+  max-width: 600px;
+  margin: 0 auto;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+h2{
+  text-align: center;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #160606;
+   color: white;
+}
+
+td button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #4c4faf;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+td span {
+  font-weight: bold;
+  color: #544caf;
+}
+
