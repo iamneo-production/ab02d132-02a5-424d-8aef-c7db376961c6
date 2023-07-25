@@ -10,7 +10,7 @@ function UserList() {
 
   const [users, setUsers] = useState([]);
   const [searchText, setSearchText] = useState('');
-  const [searchCategory, setSearchCategory] = useState('')
+  const [searchCategory, setSearchCategory] = useState('');
   const handleSearch = () => {
     let filteredUsers = users;
     if (searchText) {
