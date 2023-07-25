@@ -7,6 +7,13 @@ import UserList from './components/UserList';
 import UserForm from './components/UserForm';
 import EditUser from './components/EditUser';
 import ViewUser from './components/ViewUser';
+import Dashboard from './components/Dashboard';
+import EditTaskPage from './components/EditTaskPage';
+import AssignTask from './components/AssignTask';
+import Report from './components/Report';
+import MemberDashboard from './components/MemberDashboard';
+import EditMember from './components/EditMember';
+
 function App() {
   return (
     <>
@@ -21,14 +28,19 @@ function App() {
        <Route exact path='/adduser' element={<UserForm/>}/>
        <Route exact path="/edituser/:id" element={<EditUser/>}/>
        <Route exact path="/viewuser/:id" element={<ViewUser />} /> */}
-       <Route path='/' element={ <Navigate to="/users" /> }/>
+       <Route path='/' element={ <Navigate to="/login" /> }/>
         <Route path="/login" element={<Login />}/>
-
-
-       <Route exact path="/users" element={<UserList/>}  />
+        <Route exact path="/users" element={<UserList/>}  />
        <Route exact path='/adduser' element={<UserForm/>}/>
        <Route exact path="/edituser/:id" element={<EditUser/>}/>
-       <Route exact path="/viewuser/:id" element={<ViewUser />} />
+       <Route exact path="/viewuser/:id" element={<ViewUser/>}/>
+       <Route path={"/Leader"} element={<Dashboard />} />
+          
+          <Route path={"/EditTaskPage/:id"} element={<EditTaskPage/>}/>
+          <Route path={"/AssignTask/:id"} element={<AssignTask/>}></Route>
+          <Route path={"/Report/:id"} element={<Report/>}></Route>
+          <Route path="/tasks" element={<MemberDashboard />} />
+          <Route path={"/EditMember/:id"} element={<EditMember/>}/>
      </Routes>
 
      </Router>
@@ -40,7 +52,7 @@ function App() {
       <UserList/>           
       <UserList1/>
       <TaskList/>   */}
-      {/* <UserList2/> */}
+      
     </>
 
   );

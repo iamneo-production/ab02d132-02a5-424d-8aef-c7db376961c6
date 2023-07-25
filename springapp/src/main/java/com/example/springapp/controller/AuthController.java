@@ -23,7 +23,7 @@ import com.example.springapp.security.JwtTokenHelper;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("https://8081-dafcbabecacecbefdccdeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io")
 public class AuthController {
     
     @Autowired
