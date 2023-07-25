@@ -54,4 +54,10 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.ok("User with ID " + id + " has been deleted successfully.");
     }
+    @GetMapping("/byRole/{userrole}")
+    public List<User> getUsersByRole(@PathVariable String userrole) {
+        return userService.getUsersByRole(userrole);
+    }
+    
+
 }
