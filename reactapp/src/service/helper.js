@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from '../auth';
 
 
-export const BASE_URL='https://8080-dafcbabecacecbefdccdeaeaadbdbabf.project.examly.io';
+export const BASE_URL='https://8080-fdfdbdfeacecbefdccdeaeaadbdbabf.project.examly.io';
 
 export const myAxios=axios.create({
     baseURL:BASE_URL
