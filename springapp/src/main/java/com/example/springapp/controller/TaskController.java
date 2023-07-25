@@ -92,5 +92,24 @@ public class TaskController {
 
     }
 
+    
+
+    // API endpoint to get all tasks done by a particular user
+    @GetMapping("/assign/{assignedTo}")
+    public List<Task> getTasksByUser(@PathVariable String assignedTo) {
+        return taskRepository.findByAssignedTo(assignedTo);
+    }
+
+    @PutMapping("/EditTasks/{id}")
+    Task updateRegisterById(@PathVariable Long id, @RequestBody Task updatedRegister) {
+        return taskRepository.findById(id)
+                .map(Task -> {
+                    Task.setStatus(updatedRegister.getStatus());
+                    return taskRepository.save(Task);
+                })
+                .orElse(null);
+    }
+
+
 }
 

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Styles.css';
-import Addtask from './AddTask';
-import Card from './Card';
+import '../App.css'
+import MemberCard from './MemberCard';
 import axios from 'axios';
-import { doLogout, isLoggedIn } from '../auth';
-import { useNavigate } from 'react-router';
+import {useNavigate} from 'react-router-dom';
+import {isLoggedIn,doLogout, getCurrentUserDetail} from '../auth';
 
-const Dashboard = () => {
+const MemberDashboard = () => {
   const [modal, setModal] = useState(false);
   const [taskList, setTaskList] = useState([]);
 
@@ -14,9 +13,27 @@ const Dashboard = () => {
     loadTasks();
   }, []);
 
+  const navigate=useNavigate()
+ 
+  const [login,setLogin]=useState(false)
+  useEffect(()=>{
+    setLogin(isLoggedIn());
+  },[login])
+
+  if(!login){
+    navigate("/login");
+  }
+  const handleLogout = () =>{
+    if(login){
+      doLogout();
+      navigate('/login');
+    }
+  }
+
   const loadTasks = async () => {
+    const id=getCurrentUserDetail().username;
     try {
-      const response = await axios.get('https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks');
+      const response = await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/assign/${id}`);
       setTaskList(response.data);
     } catch (error) {
       console.log(error);
@@ -42,43 +59,25 @@ const Dashboard = () => {
     setTaskList(tempList);
     setModal(false);
   };
-  const navigate=useNavigate()
- 
-  const [login,setLogin]=useState(false)
-  useEffect(()=>{
-    setLogin(isLoggedIn());
-  },[login])
-
-  if(!login){
-    navigate("/login");
-  }
-  const handleLogout = () =>{
-    if(login){
-      doLogout();
-      navigate('/login');
-    }
-  }
 
   return (
     <>
       <div className="header text-center">
-        <h3>LEADER DASHBOARD</h3>
-        <button className="btn btn-primary mt-2" onClick={() => setModal(true)}>
-          Create Task
-        </button>
-        <button className="btn btn-primary mt-2 logout-button" onClick={handleLogout}>
+      <button className="btn btn-primary mt-2 logout-button" onClick={handleLogout}>
         Logout
-        </button>
+    </button>
+        <h3>YOUR TASKS</h3>
+        
       </div>
       <div className="task-container">
         {taskList &&
           taskList.map((obj, index) => (
-            <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} taskId={obj.taskId} />
+            <MemberCard key={index} taskObj={obj} index={index} deleteTask={deleteTask} taskId={obj.taskId} />
           ))}
       </div>
-      <Addtask toggle={toggle} modal={modal} save={saveTask} />
+      
     </>
   );
 };
 
-export default Dashboard;
+export default MemberDashboard;

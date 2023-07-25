@@ -51,7 +51,7 @@ function ViewUser() {
     <MDBCardBody className='p-5 shadow-5 text-center'>
            <h2 className="fw-bold  mb-5"> User Account Details</h2>
            <MDBCard alignment='center'>
-      <MDBCardHeader><b>DETAILS OF USER ID:{user.id}</b></MDBCardHeader>
+           <MDBCardHeader><b>USER ID:{user.id}</b></MDBCardHeader>
       <MDBCardBody>
         
         <MDBCardText>

@@ -11,6 +11,9 @@ import Dashboard from './components/Dashboard';
 import EditTaskPage from './components/EditTaskPage';
 import AssignTask from './components/AssignTask';
 import Report from './components/Report';
+import MemberDashboard from './components/MemberDashboard';
+import EditMember from './components/EditMember';
+
 function App() {
   return (
     <>
@@ -36,6 +39,8 @@ function App() {
           <Route path={"/EditTaskPage/:id"} element={<EditTaskPage/>}/>
           <Route path={"/AssignTask/:id"} element={<AssignTask/>}></Route>
           <Route path={"/Report/:id"} element={<Report/>}></Route>
+          <Route path="/tasks" element={<MemberDashboard />} />
+          <Route path={"/EditMember/:id"} element={<EditMember/>}/>
      </Routes>
 
      </Router>

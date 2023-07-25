@@ -47,9 +47,9 @@ function UserList() {
     setLogin(isLoggedIn());
   }, [login]);
 
-  /*if (!login) {
+  if (!login) {
     navigate('/login');
-  }*/
+  }
 
   const handleLogout = () => {
     if (login) {
@@ -88,51 +88,23 @@ function UserList() {
       <br />
 
       <MDBTable align='middle'>
-        <MDBTableHead className='table-primary'>
+      <MDBTableHead className='table-primary'>
 
-          <tr>
-            <th scope='col'>Id</th>
-            <th scope='col'>Name</th>
-            <th scope='col'>Email</th>
-
-            <th scope='col'>Role</th>
-            <th scope='col'>Actions</th>
-          </tr>
-        </MDBTableHead>
+        <tr>
+        <th scope='col'>Id</th>
+          <th scope='col'>Name</th>
+          <th scope='col'>Email</th>
+          
+          <th scope='col'>Role</th>
+          <th scope='col'>Actions</th>
+        </tr>
+      </MDBTableHead>
         <MDBTableBody>
 
-          {/* {
-          users.map((user,index)=>(
-            <tr>
-            <th scope='row' key={index}>{index+1}</th>
-            <td>{user.username}</td>
-            <td>{user.emailid}</td>
-           
-            <td>{user.userrole}</td>
-            <td>
-              
-              <Link   className="btn btn-danger mx-2" to={`/edituser/${user.id}`}>
-                Edit
-              </Link>
-            
-              
-              <button  className="btn btn-outline-primary mx-2" onClick={() => deleteUser(user.id)}>
-                Delete
-              </button>
-              <Link
-                    className="btn btn-primary mx-2"
-                    to={`/viewuser/${user.id}`}
-                  >
-                    View
-                  </Link>
-              
-            </td>
-          </tr>
-          ))
-        }; */}
+          
           {handleSearch().map((user, index) => (
             <tr>
-              <th scope='row' key={index}>{user.id}</th>
+              <td scope='row' key={index}>{user.id}</td>
               <td>{user.username}</td>
               <td>{user.emailid}</td>
 
