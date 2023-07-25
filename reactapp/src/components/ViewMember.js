@@ -3,13 +3,14 @@ import '../styles/Styles.css';
 import { Link } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import axios from 'axios';
+import { myAxios } from '../service/helper';
 
 const ViewMember = ({ modal, toggle, taskObj, deleteTask, index }) => {
   const handleDelete = () => {
     // Make an HTTP DELETE request to the backend API
     
-    axios
-      .delete(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${taskObj.taskId}`)
+    myAxios
+      .delete(`/api/leader/tasks/${taskObj.taskId}`)
       .then((response) => {
         // Call the deleteTask function to update the state in the parent component
         deleteTask(index);
@@ -36,9 +37,9 @@ const ViewMember = ({ modal, toggle, taskObj, deleteTask, index }) => {
           <Button color="primary">Edit</Button>
         </Link>
         <Link to="/tasks">
-        <Button color="danger">
+        {/* <Button color="danger">
           Cancel
-        </Button>
+        </Button> */}
         </Link>
         
       </ModalFooter>

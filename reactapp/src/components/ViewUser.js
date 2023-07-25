@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
+import { myAxios } from "../service/helper";
 import {
    
     MDBContainer,
@@ -35,7 +36,7 @@ function ViewUser() {
    
 
    const loadUser=async()=>{
-    const result=await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    const result=await myAxios.get(`/api/users/${id}`)
     setUser(result.data)
    }
    
@@ -51,14 +52,14 @@ function ViewUser() {
     <MDBCardBody className='p-5 shadow-5 text-center'>
            <h2 className="fw-bold  mb-5"> User Account Details</h2>
            <MDBCard alignment='center'>
-           <MDBCardHeader><b>USER ID:{user.id}</b></MDBCardHeader>
+      <MDBCardHeader><b>USER ID:{user.id}</b></MDBCardHeader>
       <MDBCardBody>
         
         <MDBCardText>
         <MDBListGroup style={{ minWidthL: '22rem' }} light>
       <MDBListGroupItem><b>Name:</b>  {user.username}</MDBListGroupItem>
       <MDBListGroupItem><b>Email:</b>  {user.emailid}</MDBListGroupItem>
-      {/* <MDBListGroupItem><b>Task:</b>{user.usertask}</MDBListGroupItem> */}
+    
     
       <MDBListGroupItem><b>Role:</b>{user.userrole}</MDBListGroupItem>
     </MDBListGroup>
@@ -66,7 +67,7 @@ function ViewUser() {
       
       </MDBCardBody>
       <MDBCardFooter >  
-      <Link className="btn btn-primary my-2" to={"/"}>Back to Home
+      <Link className="btn btn-primary my-2" to={"/users"}>Back to Home
           </Link>
          </MDBCardFooter>
     </MDBCard>

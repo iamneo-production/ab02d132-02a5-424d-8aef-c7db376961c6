@@ -13,6 +13,8 @@ import {
 import { MDBRadio } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import {myAxios} from '../service/helper';
+
 
 function EditUser() {
   function sendEmail(e){
@@ -22,7 +24,7 @@ function EditUser() {
     e.target,
     'lyPV9ADs50wKONbnC'
     ).then(res=>{
-      console.log(res);
+      // console.log(res);
     }).catch(err=>console.log(err));
     }
   
@@ -50,12 +52,12 @@ function EditUser() {
 
     const onSubmit=async (e)=>{
       e.preventDefault();
-      console.log(user)
-      await axios.put(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`,user)
-      navigate("/")
+      // console.log(user)
+      await myAxios.put(`/api/users/${id}`,user)
+      navigate("/users")
     };
  const loadUser =async ()=>{
-    const result=await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    const result=await myAxios.get(`/api/users/${id}`);
     setUser(result.data)
  }
     
@@ -107,7 +109,7 @@ function EditUser() {
 <button type="submit" className="btn btn-outline-primary mx-2 w-25">
               Update
             </button>
-            <Link className="btn btn-outline-danger mx-2 w-25" to="/">
+            <Link className="btn btn-outline-danger mx-2 w-25" to="/users">
               Cancel
             </Link>
 </>

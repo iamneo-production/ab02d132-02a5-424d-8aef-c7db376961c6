@@ -1,15 +1,18 @@
+
 import React, { useEffect, useState } from 'react';
 import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBContainer, MDBNavbar, MDBNavbarBrand } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { doLogout, isLoggedIn } from '../auth';
+import {myAxios} from '../service/helper';
+
 
 
 function UserList() {
 
   const [users, setUsers] = useState([]);
   const [searchText, setSearchText] = useState('');
-  const [searchCategory, setSearchCategory] = useState('')
+  const [searchCategory, setSearchCategory] = useState('');
   const handleSearch = () => {
     let filteredUsers = users;
     if (searchText) {
@@ -32,12 +35,12 @@ function UserList() {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users")
+    const result = await myAxios.get("/api/users")
     setUsers(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    await myAxios.delete(`/api/users/${id}`)
     loadUsers()
   }
   const navigate = useNavigate();
@@ -87,8 +90,8 @@ function UserList() {
       <br />
       <br />
 
-      <MDBTable align='middle'>
-      <MDBTableHead className='table-primary'>
+      <MDBTable align='middle' >
+      <MDBTableHead className='bg-primary bg-gradient'>
 
         <tr>
         <th scope='col'>Id</th>
@@ -111,7 +114,7 @@ function UserList() {
               <td>{user.userrole}</td>
               <td>
 
-                <Link className="btn btn-danger mx-2" to={`/edituser/${user.id}`}>
+                <Link className="btn btn-danger" to={`/edituser/${user.id}`}>
                   Edit
                 </Link>
 
@@ -120,7 +123,7 @@ function UserList() {
                   Delete
                 </button>
                 <Link
-                  className="btn btn-primary mx-2"
+                  className="btn btn-primary"
                   to={`/viewuser/${user.id}`}
                 >
                   View

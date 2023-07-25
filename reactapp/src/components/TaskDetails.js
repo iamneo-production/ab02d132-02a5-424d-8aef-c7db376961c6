@@ -22,7 +22,7 @@ function TaskDetails() {
   
     const submitHandler = (e) => {
       e.preventDefault();
-      console.log(data);
+      // console.log(data);
     };
   
     return (

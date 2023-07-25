@@ -4,6 +4,8 @@ import MemberCard from './MemberCard';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import {isLoggedIn,doLogout, getCurrentUserDetail} from '../auth';
+import {myAxios} from '../service/helper';
+
 
 const MemberDashboard = () => {
   const [modal, setModal] = useState(false);
@@ -33,7 +35,8 @@ const MemberDashboard = () => {
   const loadTasks = async () => {
     const id=getCurrentUserDetail().username;
     try {
-      const response = await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/assign/${id}`);
+      const response = await myAxios.get(`/api/leader/tasks/assign/${id}`);
+      console.log(response.data);
       setTaskList(response.data);
     } catch (error) {
       console.log(error);
@@ -69,7 +72,7 @@ const MemberDashboard = () => {
         <h3>YOUR TASKS</h3>
         
       </div>
-      <div className="task-container">
+      <div className="task-container row">
         {taskList &&
           taskList.map((obj, index) => (
             <MemberCard key={index} taskObj={obj} index={index} deleteTask={deleteTask} taskId={obj.taskId} />

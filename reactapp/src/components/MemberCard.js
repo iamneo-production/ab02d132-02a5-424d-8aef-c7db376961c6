@@ -34,14 +34,14 @@ const toggle=()=>{
 
    
     return (
-        <div className="task-container">
+        <div className="task-container col-lg-4 col-12">
         <div class = "card-wrapper mr-5">
         <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>
         <div class = "task-holder">
            
             
             
-             <div key={taskObj.id}> 
+            <div key={taskObj.id}> 
             <p className="mt-2">Task Id : {taskObj.taskId}</p>
             <p>TaskName : {taskObj.taskName}</p>
             <p>Description : {taskObj.taskDescription}</p>
