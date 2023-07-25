@@ -10,7 +10,7 @@ import com.example.springapp.repository.TaskRepository;
 
 import java.util.List;
 import java.util.Optional;
-@CrossOrigin("https://8081-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-dafcbabecacecbefdccdeaeaadbdbabf.project.examly.io/")
 @RestController
 @RequestMapping("/api/leader/tasks")
 public class TaskController {

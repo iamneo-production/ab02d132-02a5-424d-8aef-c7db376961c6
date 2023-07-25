@@ -13,6 +13,8 @@ import {
 import { MDBRadio } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import {myAxios} from '../service/helper';
+
 
 function EditUser() {
   function sendEmail(e){
@@ -51,11 +53,11 @@ function EditUser() {
     const onSubmit=async (e)=>{
       e.preventDefault();
       // console.log(user)
-      await axios.put(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`,user)
-      navigate("/")
+      await myAxios.put(`/api/users/${id}`,user)
+      navigate("/users")
     };
  const loadUser =async ()=>{
-    const result=await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    const result=await myAxios.get(`/api/users/${id}`);
     setUser(result.data)
  }
     
