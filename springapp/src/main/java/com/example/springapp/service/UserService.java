@@ -12,18 +12,14 @@ import com.example.springapp.repository.UserRepository;
 
 @Service
 public class UserService {
-    private final UserRepository userRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
-
-
     @Autowired
-    public UserService(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.userRepository = userRepository;
-		this.bCryptPasswordEncoder = new BCryptPasswordEncoder();
-    }
+    private UserRepository userRepository;
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+
     public User createUser(User user) {
-		BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
-		String encryptedpwd=bCryptPasswordEncoder.encode(user.getPassword());
+		// BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
+		String encryptedpwd=passwordEncoder.encode(user.getPassword());
 		 user.setUsername(user.getUsername());
          user.setEmailid(user.getEmailid());
          user.setPassword(encryptedpwd);
@@ -62,6 +58,9 @@ public class UserService {
             throw new UserNotFoundException(id);
         }
         userRepository.deleteById(id);
+    }
+    public List<User> getUsersByRole(String userrole) {
+        return userRepository.findByUserrole(userrole);
     }
     
 }

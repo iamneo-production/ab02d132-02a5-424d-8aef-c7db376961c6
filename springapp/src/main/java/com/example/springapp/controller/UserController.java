@@ -22,12 +22,8 @@ import com.example.springapp.service.UserService;
 @CrossOrigin("https://8081-cfeacaaecbacecbefdccdeaeaadbdbabf.project.examly.io/")
 public class UserController {
 
-    private final UserService userService;
-
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService;
 
     @PostMapping("/add")
     public ResponseEntity<User> createUser(@RequestBody User newUser) {
@@ -58,4 +54,10 @@ public class UserController {
         userService.deleteUser(id);
         return ResponseEntity.ok("User with ID " + id + " has been deleted successfully.");
     }
+    @GetMapping("/byRole/{userrole}")
+    public List<User> getUsersByRole(@PathVariable String userrole) {
+        return userService.getUsersByRole(userrole);
+    }
+    
+
 }
