@@ -4,6 +4,8 @@ import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBContainer, MDBNavbar, 
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { doLogout, isLoggedIn } from '../auth';
+import {myAxios} from '../service/helper';
+
 
 
 function UserList() {
@@ -33,12 +35,12 @@ function UserList() {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users")
+    const result = await myAxios.get("/api/users")
     setUsers(result.data);
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    await myAxios.delete(`/api/users/${id}`)
     loadUsers()
   }
   const navigate = useNavigate();
