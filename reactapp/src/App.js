@@ -28,12 +28,12 @@ function App() {
        <Route exact path='/adduser' element={<UserForm/>}/>
        <Route exact path="/edituser/:id" element={<EditUser/>}/>
        <Route exact path="/viewuser/:id" element={<ViewUser />} /> */}
-       <Route path='/' element={ <Navigate to="/users" /> }/>
+       <Route path='/' element={ <Navigate to="/login" /> }/>
         <Route path="/login" element={<Login />}/>
         <Route exact path="/users" element={<UserList/>}  />
        <Route exact path='/adduser' element={<UserForm/>}/>
        <Route exact path="/edituser/:id" element={<EditUser/>}/>
-       <Route exact path="/viewuser/:id" element={<ViewUser />} />
+       <Route exact path="/viewuser/:id" element={<ViewUser/>}/>
        <Route path={"/Leader"} element={<Dashboard />} />
           
           <Route path={"/EditTaskPage/:id"} element={<EditTaskPage/>}/>

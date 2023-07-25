@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Styles.css';
 import axios from 'axios';
+import { Button } from 'reactstrap';
 import { Link, useParams } from 'react-router-dom';
 
 const Report = ({ taskId }) => {
@@ -13,7 +14,8 @@ const Report = ({ taskId }) => {
 
   const fetchTaskDetails = async () => {
     try {
-      const response = await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+      const response = await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+      // console.log(response.data);
       setTaskDetails(response.data);
     } catch (error) {
       console.log(error);
@@ -37,6 +39,10 @@ const Report = ({ taskId }) => {
                 <p>Due Date: {taskDetails.dueDate}</p>
                 <p>Status: {taskDetails.status}</p>
                 <p>Assigned To: {taskDetails.assignedTo}</p>
+                
+             <Link to="/Leader">
+            <Button color="secondary">Cancel</Button>
+            </Link>
                 </div>
             </div>
         </div> 
