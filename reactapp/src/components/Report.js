@@ -13,7 +13,8 @@ const Report = ({ taskId }) => {
 
   const fetchTaskDetails = async () => {
     try {
-      const response = await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+      const response = await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+      // console.log(response.data);
       setTaskDetails(response.data);
     } catch (error) {
       console.log(error);

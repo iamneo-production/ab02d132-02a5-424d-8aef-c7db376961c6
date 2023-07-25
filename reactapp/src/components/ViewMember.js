@@ -9,7 +9,7 @@ const ViewMember = ({ modal, toggle, taskObj, deleteTask, index }) => {
     // Make an HTTP DELETE request to the backend API
     
     axios
-      .delete(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${taskObj.taskId}`)
+      .delete(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${taskObj.taskId}`)
       .then((response) => {
         // Call the deleteTask function to update the state in the parent component
         deleteTask(index);

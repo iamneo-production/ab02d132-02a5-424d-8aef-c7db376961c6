@@ -19,7 +19,7 @@ const AssignTask = ({taskObj}) => {
     // Fetch task details by ID
     const fetchTaskDetails = async () => {
       try {
-        const response = await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+        const response = await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
         const taskData = response.data;
         setTaskName(taskData.taskName);
         setTaskDescription(taskData.taskDescription);
@@ -46,9 +46,9 @@ const AssignTask = ({taskObj}) => {
 
     // Make an HTTP PUT request to update the task details by ID
     axios
-      .put(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/EditTask/${id}`, taskData)
+      .put(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/EditTask/${id}`, taskData)
       .then((response) => {
-        console.log(response.data); // Log the response from the backend
+        // console.log(response.data); // Log the response from the backend
         // Handle the response or perform any necessary actions
       })
       .catch((error) => {
@@ -139,8 +139,10 @@ const AssignTask = ({taskObj}) => {
              <Button color="primary" style={{ marginRight: '1rem' }} onClick={handleEdit}>
                Edit
              </Button>
-             </Link> 
+             </Link>
+             <Link to="/Leader" >
             <Button color="secondary">Cancel</Button>
+            </Link>
           </div>
         </div>
       </div>

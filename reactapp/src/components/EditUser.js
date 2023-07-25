@@ -22,7 +22,7 @@ function EditUser() {
     e.target,
     'lyPV9ADs50wKONbnC'
     ).then(res=>{
-      console.log(res);
+      // console.log(res);
     }).catch(err=>console.log(err));
     }
   
@@ -50,12 +50,12 @@ function EditUser() {
 
     const onSubmit=async (e)=>{
       e.preventDefault();
-      console.log(user)
-      await axios.put(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`,user)
+      // console.log(user)
+      await axios.put(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`,user)
       navigate("/")
     };
  const loadUser =async ()=>{
-    const result=await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    const result=await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
     setUser(result.data)
  }
     
