@@ -19,7 +19,7 @@ const AssignTask = () => {
 
   const getData = async () => {
     try {
-      const response = await axios.get("https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/byRole/Member");
+      const response = await axios.get("https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/byRole/Member");
       setUserdata(response.data);
       console.log(response.data, "----------------------");
     } catch (error) {
@@ -30,7 +30,7 @@ const AssignTask = () => {
     // Fetch task details by ID
     const fetchTaskDetails = async () => {
       try {
-        const response = await axios.get(`https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+        const response = await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
         const taskData = response.data;
         setTaskName(taskData.taskName);
       } catch (error) {
@@ -58,7 +58,7 @@ const AssignTask = () => {
       assignedTo: assignedTo
     };
     try {
-      await axios.put(`https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/AssignTask/${id}`, taskData);
+      await axios.put(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/AssignTask/${id}`, taskData);
       console.log("Task assigned successfully!");
     } catch (error) {
       console.log(error);

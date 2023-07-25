@@ -7,7 +7,7 @@
   .report-header{
     height: 100px;
     width: 100%;
-    background-color : #E9EEF6;
+    background-color : #E9EEF6; 
     padding-top: 20px;
   }
   .card-container{
@@ -62,7 +62,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: #F6F7F8;
+    background-color: #F6F7F8; 
     padding : 20px 80px;
     justify-content: space-evenly;
   }

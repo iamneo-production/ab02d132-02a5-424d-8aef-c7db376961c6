@@ -41,7 +41,7 @@ const Addtask = ({ modal, toggle, save }) => {
     };
     console.log(taskObj,"-----------");
     try {
-      const response = await axios.post('https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/add', taskObj);
+      const response = await axios.post('https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/add', taskObj);
       save(response.data);
     } catch (error) {
       console.log(error);

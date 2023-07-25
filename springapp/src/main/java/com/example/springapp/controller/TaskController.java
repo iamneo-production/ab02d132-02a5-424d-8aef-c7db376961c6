@@ -10,7 +10,7 @@ import com.example.springapp.repository.TaskRepository;
 
 import java.util.List;
 import java.util.Optional;
-@CrossOrigin("https://8081-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io")
 @RestController
 @RequestMapping("/api/leader/tasks")
 public class TaskController {
@@ -91,6 +91,25 @@ public class TaskController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
+
+    
+
+    // API endpoint to get all tasks done by a particular user
+    @GetMapping("/assign/{assignedTo}")
+    public List<Task> getTasksByUser(@PathVariable String assignedTo) {
+        return taskRepository.findByAssignedTo(assignedTo);
+    }
+
+    @PutMapping("/EditTasks/{id}")
+    Task updateRegisterById(@PathVariable Long id, @RequestBody Task updatedRegister) {
+        return taskRepository.findById(id)
+                .map(Task -> {
+                    Task.setStatus(updatedRegister.getStatus());
+                    return taskRepository.save(Task);
+                })
+                .orElse(null);
+    }
+
 
 }
 

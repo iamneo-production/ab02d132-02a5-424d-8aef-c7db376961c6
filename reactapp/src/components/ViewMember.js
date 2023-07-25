@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import axios from 'axios';
 
-const ViewDetails = ({ modal, toggle, taskObj, deleteTask, index }) => {
+const ViewMember = ({ modal, toggle, taskObj, deleteTask, index }) => {
   const handleDelete = () => {
     // Make an HTTP DELETE request to the backend API
     
@@ -32,18 +32,18 @@ const ViewDetails = ({ modal, toggle, taskObj, deleteTask, index }) => {
         </div>
       </ModalBody>
       <ModalFooter>
-        <Link to={`/EditTaskPage/${taskObj.taskId}`}>
+        <Link to={`/EditMember/${taskObj.taskId}`}>
           <Button color="primary">Edit</Button>
         </Link>
-        <Button color="danger" onClick={handleDelete}>
-          Delete
+        <Link to="/tasks">
+        <Button color="danger">
+          Cancel
         </Button>
-        <Link to={`/AssignTask/${taskObj.taskId}`}>
-          <Button color="success">Assign</Button>
         </Link>
+        
       </ModalFooter>
     </Modal>
   );
 };
 
-export default ViewDetails;
+export default ViewMember;

@@ -36,7 +36,7 @@ export const Login = () => {
                 console.log("login details is saved to localstorage");
                 const role=getCurrentUserDetail().userrole;
                 if(role==='Member'){
-                    navigate("/users")
+                    navigate("/tasks")
                 }
                 else if(role==='Admin'){
                     navigate("/users")

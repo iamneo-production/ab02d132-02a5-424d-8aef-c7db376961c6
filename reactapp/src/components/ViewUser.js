@@ -35,7 +35,7 @@ function ViewUser() {
    
 
    const loadUser=async()=>{
-    const result=await axios.get(`https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
+    const result=await axios.get(`https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)
     setUser(result.data)
    }
    
@@ -51,7 +51,7 @@ function ViewUser() {
     <MDBCardBody className='p-5 shadow-5 text-center'>
            <h2 className="fw-bold  mb-5"> User Account Details</h2>
            <MDBCard alignment='center'>
-      <MDBCardHeader><b>DETAILS OF USER ID:{user.id}</b></MDBCardHeader>
+           <MDBCardHeader><b>USER ID:{user.id}</b></MDBCardHeader>
       <MDBCardBody>
         
         <MDBCardText>
