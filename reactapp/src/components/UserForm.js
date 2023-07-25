@@ -24,7 +24,7 @@ function UserForm() {
     e.target,
     'lyPV9ADs50wKONbnC'
     ).then(res=>{
-      console.log(res);
+      // console.log(res);
     }).catch(err=>console.log(err));
   }
 
@@ -53,9 +53,9 @@ function UserForm() {
 
     const onSubmit=async (e)=>{
       e.preventDefault();
-      //console.log(user)
+      //// console.log(user)
       const { data } = await client.post("/api/users/add",user)
-      console.log(data);
+      // console.log(data);
       
       sendEmail(e);
       navigate("/")

@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   const loadTasks = async () => {
     try {
-      const response = await axios.get('https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks');
+      const response = await axios.get('https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks');
       setTaskList(response.data);
     } catch (error) {
       console.log(error);
@@ -70,7 +70,7 @@ const Dashboard = () => {
         Logout
         </button>
       </div>
-      <div className="task-container">
+      <div className="task-container row">
         {taskList &&
           taskList.map((obj, index) => (
             <Card key={index} taskObj={obj} index={index} deleteTask={deleteTask} taskId={obj.taskId} />

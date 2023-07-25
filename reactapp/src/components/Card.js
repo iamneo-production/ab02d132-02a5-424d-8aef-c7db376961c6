@@ -34,7 +34,7 @@ const toggle=()=>{
 
    
     return (
-        <div className="task-container">
+        <div className="task-container col-lg-4 col-12">
         <div class = "card-wrapper mr-5">
         <div class = "card-top" style={{"background-color": colors[index%5].primaryColor}}></div>
         <div class = "task-holder">
@@ -47,13 +47,15 @@ const toggle=()=>{
             <p>Description : {taskObj.taskDescription}</p>
             <p>DueDate : {taskObj.dueDate}</p>
             <p>Status : {taskObj.status} </p>
-            <div><Button style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}onClick={()=>setModal(true)}>View Details</Button></div>
-            <div>
-                <Link to = {`/Report/${taskObj.taskId}`}>
-                <Button className="btn1 mt-3" style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}>Report</Button>   
-                </Link>
+            <div class="d-flex justify-content-lg-between justify-content-evenly">
+
+            <div><Button style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}onClick={()=>setModal(true)}>View</Button></div>
+                <div>
+                    <Link to = {`/Report/${taskObj.taskId}`}>
+                    <Button className="btn1" style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}>Report</Button>   
+                    </Link>
+                </div>
             </div>
-            
             </div>
      
     
