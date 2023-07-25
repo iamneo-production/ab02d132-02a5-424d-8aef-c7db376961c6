@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   const loadTasks = async () => {
     try {
-      const response = await axios.get('https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks');
+      const response = await axios.get('https://8080-fdbdefcaaebefacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks');
       setTaskList(response.data);
     } catch (error) {
       console.log(error);
@@ -49,9 +49,9 @@ const Dashboard = () => {
     setLogin(isLoggedIn());
   },[login])
 
-  if(!login){
+  /*if(!login){
     navigate("/login");
-  }
+  }*/
   const handleLogout = () =>{
     if(login){
       doLogout();
