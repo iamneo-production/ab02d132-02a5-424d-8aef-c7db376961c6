@@ -107,7 +107,7 @@ function EditUser() {
 <button type="submit" className="btn btn-outline-primary mx-2 w-25">
               Update
             </button>
-            <Link className="btn btn-outline-danger mx-2 w-25" to="/">
+            <Link className="btn btn-outline-danger mx-2 w-25" to="/users">
               Cancel
             </Link>
 </>

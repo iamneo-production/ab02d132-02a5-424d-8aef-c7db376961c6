@@ -36,9 +36,9 @@ const ViewMember = ({ modal, toggle, taskObj, deleteTask, index }) => {
           <Button color="primary">Edit</Button>
         </Link>
         <Link to="/tasks">
-        <Button color="danger">
+        {/* <Button color="danger">
           Cancel
-        </Button>
+        </Button> */}
         </Link>
         
       </ModalFooter>
