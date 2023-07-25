@@ -3,6 +3,8 @@ import '../styles/Styles.css';
 import axios from 'axios';
 import { Button } from 'reactstrap';
 import { Link, useParams } from 'react-router-dom';
+import {myAxios} from '../service/helper';
+
 
 const Report = ({ taskId }) => {
   const [taskDetails, setTaskDetails] = useState(null);
@@ -14,7 +16,7 @@ const Report = ({ taskId }) => {
 
   const fetchTaskDetails = async () => {
     try {
-      const response = await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+      const response = await myAxios.get(`/api/leader/tasks/${id}`);
       // console.log(response.data);
       setTaskDetails(response.data);
     } catch (error) {

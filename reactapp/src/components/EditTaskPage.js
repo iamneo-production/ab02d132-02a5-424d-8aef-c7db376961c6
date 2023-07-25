@@ -5,6 +5,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { Button } from 'reactstrap';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import {myAxios} from '../service/helper';
+
 
 
 const AssignTask = ({taskObj}) => {
@@ -19,7 +21,7 @@ const AssignTask = ({taskObj}) => {
     // Fetch task details by ID
     const fetchTaskDetails = async () => {
       try {
-        const response = await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/${id}`);
+        const response = await myAxios.get(`/api/leader/tasks/${id}`);
         const taskData = response.data;
         setTaskName(taskData.taskName);
         setTaskDescription(taskData.taskDescription);
@@ -45,8 +47,8 @@ const AssignTask = ({taskObj}) => {
     };
 
     // Make an HTTP PUT request to update the task details by ID
-    axios
-      .put(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/EditTask/${id}`, taskData)
+    myAxios
+      .put(`/api/leader/tasks/EditTask/${id}`, taskData)
       .then((response) => {
         // console.log(response.data); // Log the response from the backend
         // Handle the response or perform any necessary actions
