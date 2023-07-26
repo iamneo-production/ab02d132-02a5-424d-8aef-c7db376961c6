@@ -52,7 +52,7 @@ function EditUser() {
       e.preventDefault();
       // console.log(user)
       await axios.put(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`,user)
-      navigate("/")
+      navigate("/users")
     };
  const loadUser =async ()=>{
     const result=await axios.get(`https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/api/users/${id}`)

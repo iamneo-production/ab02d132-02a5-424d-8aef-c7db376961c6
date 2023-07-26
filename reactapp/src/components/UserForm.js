@@ -58,7 +58,7 @@ function UserForm() {
       // console.log(data);
       
       sendEmail(e);
-      navigate("/")
+      navigate("/users")
     };
  
     
