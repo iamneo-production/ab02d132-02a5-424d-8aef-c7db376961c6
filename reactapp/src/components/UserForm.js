@@ -14,6 +14,8 @@ import {
 import { MDBRadio } from 'mdb-react-ui-kit';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import {myAxios} from '../service/helper';
+
 
 function UserForm() {
 
@@ -24,7 +26,7 @@ function UserForm() {
     e.target,
     'lyPV9ADs50wKONbnC'
     ).then(res=>{
-      console.log(res);
+      // console.log(res);
     }).catch(err=>console.log(err));
   }
 
@@ -41,9 +43,9 @@ function UserForm() {
       userrole:""
     })
    
-    const client = axios.create({
-      baseURL: "https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io",
-    });
+    // const client = axios.create({
+    //   baseURL: "https://8080-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io/",
+    // });
 
     const{username,emailid,password,userrole}=user
 
@@ -53,12 +55,12 @@ function UserForm() {
 
     const onSubmit=async (e)=>{
       e.preventDefault();
-      //console.log(user)
-      const { data } = await client.post("/api/users/add",user)
-      console.log(data);
+      //// console.log(user)
+      const { data } = await myAxios.post("/api/users/add",user)
+      // console.log(data);
       
       sendEmail(e);
-      navigate("/")
+      navigate("/users")
     };
  
     
@@ -121,7 +123,7 @@ function UserForm() {
 <button type="submit" className="btn btn-primary mx-2 w-25">
               Create
             </button>
-            <Link className="btn btn-danger mx-2 w-25" to="/">
+            <Link className="btn btn-danger mx-2 w-25" to="/users">
               Cancel
             </Link>
 </>

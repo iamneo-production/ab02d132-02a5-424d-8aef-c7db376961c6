@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ViewDetails from './ViewDetails';
+import '../App.css';
+import ViewMember from './ViewMember';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import '../styles/Styles.css';
 import axios from 'axios';
-const Card = ({taskObj,index,deleteTask}) => {
+const MemberCard = ({taskObj,index,deleteTask}) => {
     const [modal,setModal]=useState(false);
     const colors = [
         {
@@ -41,21 +41,14 @@ const toggle=()=>{
            
             
             
-             <div key={taskObj.id}> 
+            <div key={taskObj.id}> 
             <p className="mt-2">Task Id : {taskObj.taskId}</p>
             <p>TaskName : {taskObj.taskName}</p>
             <p>Description : {taskObj.taskDescription}</p>
             <p>DueDate : {taskObj.dueDate}</p>
             <p>Status : {taskObj.status} </p>
-            <div class="d-flex justify-content-lg-between justify-content-evenly">
-
-            <div><Button style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}onClick={()=>setModal(true)}>View</Button></div>
-                <div>
-                    <Link to = {`/Report/${taskObj.taskId}`}>
-                    <Button className="btn1" style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}>Report</Button>   
-                    </Link>
-                </div>
-            </div>
+            <div><Button style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}onClick={()=>setModal(true)}>View Details</Button></div>
+            
             </div>
      
     
@@ -63,10 +56,10 @@ const toggle=()=>{
                 
             
     </div>
-    <ViewDetails modal={modal} toggle={toggle} taskObj={taskObj} deleteTask={deleteTask}/>
+    <ViewMember modal={modal} toggle={toggle} taskObj={taskObj} deleteTask={deleteTask}/>
     </div>
     </div>
     );
 };
 
-export default Card;
+export default MemberCard;

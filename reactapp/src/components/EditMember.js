@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/Styles.css';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import '../App.css';
 import { Button } from 'reactstrap';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
@@ -48,7 +46,7 @@ const AssignTask = ({taskObj}) => {
 
     // Make an HTTP PUT request to update the task details by ID
     myAxios
-      .put(`/api/leader/tasks/EditTask/${id}`, taskData)
+      .put(`/api/leader/tasks/EditTasks/${id}`, taskData)
       .then((response) => {
         // console.log(response.data); // Log the response from the backend
         // Handle the response or perform any necessary actions
@@ -87,17 +85,7 @@ const AssignTask = ({taskObj}) => {
                 onChange={(e) => setTaskDescription(e.target.value)}
               />
             </div>
-            <div className="form-group mt-3">
-              <label htmlFor="dueDate">DueDate</label>
-              <br />
-              <DatePicker
-                className="form-control"
-                selected={dueDate}
-                onChange={(date) => setDueDate(date)}
-                dateFormat="dd/MM/yyyy"
-                placeholderText="Select a due date"
-              />
-            </div>
+            
             <div className="form-group mt-3">
               <label>Status</label>
               <br />
@@ -137,12 +125,12 @@ const AssignTask = ({taskObj}) => {
             </div>
           </form>
           <div className="text-center" style={{ marginTop: '1rem' }}>
-            <Link to = "/Leader">
+            <Link to = "/tasks">
              <Button color="primary" style={{ marginRight: '1rem' }} onClick={handleEdit}>
                Edit
              </Button>
-             </Link>
-             <Link to="/Leader" >
+             </Link > 
+             <Link to="/tasks">
             <Button color="secondary">Cancel</Button>
             </Link>
           </div>

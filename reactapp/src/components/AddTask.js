@@ -3,15 +3,14 @@ import '../styles/Styles.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import {myAxios} from '../service/helper';
 import axios from 'axios';
-
 const Addtask = ({ modal, toggle, save }) => {
   const [taskId, setTaskId] = useState('');
   const [taskName, setTaskName] = useState('');
   const [description, setDescription] = useState('');
   const [duedate, setDueDate] = useState('');
   const [status, setStatus] = useState('');
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === 'taskId') {
@@ -39,9 +38,9 @@ const Addtask = ({ modal, toggle, save }) => {
       dueDate: duedate,
       status: status,
     };
-    console.log(taskObj,"-----------");
+    // console.log(taskObj,"-----------");
     try {
-      const response = await axios.post('https://8080-bdbdbfdecebafacecbefdccdeaeaadbdbabf.project.examly.io/api/leader/tasks/add', taskObj);
+      const response = await myAxios.post('/api/leader/tasks/add', taskObj);
       save(response.data);
     } catch (error) {
       console.log(error);

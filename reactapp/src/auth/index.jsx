@@ -1,4 +1,5 @@
 //isLoggedIn
+import { toast } from 'react-toastify';
 export const isLoggedIn=()=>{
     let data=localStorage.getItem("data")
     if(data==null) return false;
@@ -16,6 +17,7 @@ export const doLogin=(data,next)=>{
 export const doLogout=()=>{
     localStorage.removeItem("data")
     //next()
+    toast.success("Logout Success");
 };
 //get currentUser
 export const getCurrentUserDetail=()=>{
