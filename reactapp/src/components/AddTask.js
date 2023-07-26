@@ -107,7 +107,7 @@ const Addtask = ({ modal, toggle, save }) => {
               />
               <label className="form-check-label">Todo</label>
             </div>
-            <div className="form-check">
+            {/* <div className="form-check">
               <input
                 className="form-check-input"
                 type="radio"
@@ -130,7 +130,7 @@ const Addtask = ({ modal, toggle, save }) => {
                 required
               />
               <label className="form-check-label">Done</label>
-            </div>
+            </div> */}
           </div>
         </form>
       </ModalBody>

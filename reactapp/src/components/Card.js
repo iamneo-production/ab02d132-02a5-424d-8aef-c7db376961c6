@@ -42,11 +42,11 @@ const toggle=()=>{
             
             
              <div key={taskObj.id}> 
-            <p className="mt-2">Task Id : {taskObj.taskId}</p>
-            <p>TaskName : {taskObj.taskName}</p>
-            <p>Description : {taskObj.taskDescription}</p>
-            <p>DueDate : {taskObj.dueDate}</p>
-            <p>Status : {taskObj.status} </p>
+            <p className="fw-bolder mt-2">Task Id : {taskObj.taskId}</p>
+            <p class="fw-bolder">TaskName : {taskObj.taskName}</p>
+            <p class="fw-bolder">Description : {taskObj.taskDescription}</p>
+            <p class="fw-bolder">DueDate : {taskObj.dueDate}</p>
+            <p class="fw-bolder">Status : {taskObj.status} </p>
             <div class="d-flex justify-content-lg-between justify-content-evenly">
 
             <div><Button style={{"background-color":colors[index%5].primaryColor,"border-radius": "5px","border":colors[index%5].primaryColor}}onClick={()=>setModal(true)}>View</Button></div>

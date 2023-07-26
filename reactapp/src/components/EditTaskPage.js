@@ -98,7 +98,7 @@ const AssignTask = ({taskObj}) => {
                 placeholderText="Select a due date"
               />
             </div>
-            <div className="form-group mt-3">
+            {/* <div className="form-group mt-3">
               <label>Status</label>
               <br />
               <div className="form-check">
@@ -134,7 +134,7 @@ const AssignTask = ({taskObj}) => {
                 />
                 <label className="form-check-label">Done</label>
               </div>
-            </div>
+            </div> */}
           </form>
           <div className="text-center" style={{ marginTop: '1rem' }}>
             <Link to = "/Leader">
