@@ -112,7 +112,8 @@ const AssignTask = () => {
               Assign
             </Button>
               </Link>
-            <Button color="secondary">Cancel</Button>
+              <Link to="/Leader">
+            <Button color="secondary">Cancel</Button></Link>
           </div>
         </div>
       </div>
