@@ -69,7 +69,9 @@ const MemberDashboard = () => {
       <button className="btn btn-primary mt-2 logout-button" onClick={handleLogout}>
         Logout
     </button>
-        <h3>YOUR TASKS</h3>
+    <div className='report-header text-left'>
+            <h4>Virtusa Task Management</h4>
+        </div>
         
       </div>
       <div className="task-container row">

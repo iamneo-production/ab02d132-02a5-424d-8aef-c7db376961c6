@@ -29,10 +29,11 @@ const Report = ({ taskId }) => {
   }
     return (
         <>
-        <div className='report-header text-center'>
-            <h3>Report</h3>
+        <div className='report-header text-left'>
+            <h4>Virtusa Task Management-REPORT</h4>
         </div>
         <div className='report-task mt-5'>
+          
             <div className='report-wrapper'>
                 <div className='task-holder'>
                 <p class="fw-bolder" key={id}>Task Id: {taskDetails.taskId}</p>

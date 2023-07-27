@@ -13,6 +13,7 @@ import AssignTask from './components/AssignTask';
 import Report from './components/Report';
 import MemberDashboard from './components/MemberDashboard';
 import EditMember from './components/EditMember';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
        <Route exact path='/adduser' element={<UserForm/>}/>
        <Route exact path="/edituser/:id" element={<EditUser/>}/>
        <Route exact path="/viewuser/:id" element={<ViewUser />} /> */}
-       <Route path='/' element={ <Navigate to="/login" /> }/>
+       <Route path='/' element={ <Navigate to="/LandingPage" /> }/>
         <Route path="/login" element={<Login />}/>
         <Route exact path="/users" element={<UserList/>}  />
        <Route exact path='/adduser' element={<UserForm/>}/>
