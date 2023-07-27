@@ -97,7 +97,7 @@ const AssignTask = ({taskObj}) => {
                 placeholderText="Select a due date"
               />
             </div>
-            {/* <div className="form-group mt-3">
+            <div className="form-group mt-3">
               <label>Status</label>
               <br />
               <div className="form-check">
