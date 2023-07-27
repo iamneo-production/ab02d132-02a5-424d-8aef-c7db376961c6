@@ -112,12 +112,13 @@ const AssignTask = ({taskObj}) => {
                 />
                 <label className="form-check-label">Todo</label>
               </div>
-              <div className="form-check">
+              {/* <div className="form-check">
                 <input
                   className="form-check-input"
                   type="radio"
                   name="status"
                   value="InProgress"
+                  disabled
                   checked={status === 'InProgress'}
                   onChange={() => setStatus('InProgress')}
                 />
@@ -129,12 +130,13 @@ const AssignTask = ({taskObj}) => {
                   type="radio"
                   name="status"
                   value="Done"
+                  disabled
                   checked={status === 'Done'}
                   onChange={() => setStatus('Done')}
                 />
                 <label className="form-check-label">Done</label>
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </form>
           <div className="text-center" style={{ marginTop: '1rem' }}>
             <Link to = "/Leader">

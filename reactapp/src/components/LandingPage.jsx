@@ -229,4 +229,140 @@ Look no further! Task Management tool is here to streamline your life and bring 
                       In Task management, the Team Leader plan, execute,
                       track and complete projects with the help of
                       team members.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="box m-3 bg-white text-center card shadow border-0 p-4">
+                <div class="d-flex flex-column align-items-center">
+                  <div
+                    class="img-box"
+                    style={{ height: "75px", width: "75px" }}
+                  >
+                    <img
+                      src={task}
+                      class="img-fluid mx-auto cursor-pointer"
+                      style={{ maxWidth: "100px", maxHeight: "120px" }}
+                      alt=""
+                    />
+                  </div>
+                  <div class="detail-box">
+                    <br />
+                    <h4 style={{ marginTop: "20px" }}>Task completion</h4>
+                    <p>
+                      Task management involves breaking down a project into
+                      smaller tasks, managing those tasks, and tracking their
+                      progress.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="box m-3 bg-white text-center card shadow border-0 p-4">
+                <div class="d-flex flex-column align-items-center">
+                  <div
+                    class="img-box"
+                    style={{ height: "75px", width: "75px" }}
+                  >
+                    <img
+                      src={admin}
+                      class="img-fluid mx-auto cursor-pointer"
+                      style={{ maxWidth: "100px", maxHeight: "120px" }}
+                      alt=""
+                    />
+                  </div>
+                  <div class="detail-box">
+                    <br />
+                    <h4 style={{ marginTop: "20px" }}>Admin</h4>
+                    <p>
+                      The Admin eventually manages the leader and member 
+                      and also create account for them and maintain their 
+                      account properly
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="box m-3 bg-white text-center card shadow border-0 p-4">
+                <div class="d-flex flex-column align-items-center">
+                  <div
+                    class="img-box"
+                    style={{ height: "75px", width: "75px" }}
+                  >
+                    <img
+                      src={report}
+                      class="img-fluid mx-auto cursor-pointer"
+                      style={{ maxWidth: "100px", maxHeight: "120px" }}
+                      alt=""
+                    />
+                  </div>
+                  <div class="detail-box">
+                    <br />
+                    <h4 style={{ marginTop: "20px" }}>Report Generation</h4>
+                    <p>
+                      A project report as a summary overview to share the status
+                      of the project with stakeholders, clients, and team
+                      members.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pros" class="features">
+        <div class="container" data-aos="fade-up">
+          <header class="section-header">
+            <h2
+              className="text-center"
+              id="scrollspybenefit"
+              style={{ fontFamily: "Roboto Slab", color: "#fd694d" }}
+            >
+              Benefits
+            </h2>
+          </header>
+          <div className="col-md-6 ">
+            <div className="img-box">
+              <img
+                src={ben}
+                height="450px"
+                width="650px"
+                style={{ maxWidth: "100%" }}
+                alt=""
+              />
+            </div>
+            </div>
+
          
+          
+
+            <div class="row-lg-6 mt-5 mt-lg-0 d-flex">
+              <div class="row align-self-center gy-4">
+                
+                {benefits.map((benefit, id) => (
+                  <div class="col-md-6">
+                    <div class="box m-3 bg-white text-center card shadow border-0 p-2">
+                    <i class="fa-solid fa-square-check" ></i>
+                      <h5>{benefit.description}</h5>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+      
+      </section>
+    </div>
+  );
+};
+
+export default LandingPage;
