@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css'
+import { MDBBtn, MDBContainer, MDBNavbar, MDBNavbarBrand } from 'mdb-react-ui-kit';
+
 import MemberCard from './MemberCard';
-import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import {isLoggedIn,doLogout, getCurrentUserDetail} from '../auth';
 import {myAxios} from '../service/helper';
@@ -65,13 +66,21 @@ const MemberDashboard = () => {
 
   return (
     <>
+    <MDBNavbar light bgColor='light'>
+      <MDBContainer fluid>
+        <MDBNavbarBrand tag="span" className='mb-0 h1'>Virtusa Task Management</MDBNavbarBrand>
+
+        <form className='d-flex input-group w-auto'>
+          <MDBBtn onClick={handleLogout}>Logout</MDBBtn>
+        </form>
+
+      </MDBContainer>
+    </MDBNavbar>
       <div className="header text-center">
       <button className="btn btn-primary mt-2 logout-button" onClick={handleLogout}>
         Logout
     </button>
-    <div className='report-header text-left'>
-            <h4>Virtusa Task Management</h4>
-        </div>
+        <h3>YOUR TASKS</h3>
         
       </div>
       <div className="task-container row">

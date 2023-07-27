@@ -1,7 +1,5 @@
-import axios from "axios";
 import '../styles/Styles.css';
 import React, { useEffect, useState } from "react";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link, useParams } from 'react-router-dom';
 import { Button } from "reactstrap";

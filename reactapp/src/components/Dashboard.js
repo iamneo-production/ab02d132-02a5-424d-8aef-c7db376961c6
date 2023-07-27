@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Styles.css';
 import Addtask from './AddTask';
 import Card from './Card';
-import axios from 'axios';
+import { MDBBtn, MDBContainer, MDBNavbar, MDBNavbarBrand } from 'mdb-react-ui-kit';
 import {myAxios} from '../service/helper';
 
 import { doLogout, isLoggedIn } from '../auth';
@@ -63,13 +63,20 @@ const Dashboard = () => {
 
   return (
     <>
+    <MDBNavbar light bgColor='light'>
+      <MDBContainer fluid>
+        <MDBNavbarBrand tag="span" className='mb-0 h1'>Virtusa Task Management</MDBNavbarBrand>
+
+        <form className='d-flex input-group w-auto'>
+          <MDBBtn onClick={handleLogout}>Logout</MDBBtn>
+        </form>
+
+      </MDBContainer>
+    </MDBNavbar>
       <div className="header text-center">
         <h3>LEADER DASHBOARD</h3>
         <button className="btn btn-primary mt-2" onClick={() => setModal(true)}>
           Create Task
-        </button>
-        <button className="btn btn-primary mt-2 logout-button" onClick={handleLogout}>
-        Logout
         </button>
       </div>
       <div className="task-container row">
