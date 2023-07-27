@@ -72,6 +72,7 @@ const AssignTask = ({taskObj}) => {
                 className="form-control"
                 required
                 value={taskName}
+                disabled
                 onChange={(e) => setTaskName(e.target.value)}
               />
             </div>
@@ -82,6 +83,7 @@ const AssignTask = ({taskObj}) => {
                 className="form-control"
                 required
                 value={taskDescription}
+                disabled
                 onChange={(e) => setTaskDescription(e.target.value)}
               />
             </div>
