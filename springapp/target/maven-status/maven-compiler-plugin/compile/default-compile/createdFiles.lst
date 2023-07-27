@@ -1,13 +1,8 @@
 com/example/springapp/SpringappApplication.class
 com/example/springapp/security/CustomUserDetailsService.class
 com/example/springapp/exception/ResourceNotFoundException.class
-<<<<<<< HEAD
 com/example/springapp/security/JwtAuthenticationFilter.class
 com/example/springapp/security/JwtTokenHelper.class
-=======
-com/example/springapp/security/JwtTokenHelper.class
-com/example/springapp/security/JwtAuthenticationFilter.class
->>>>>>> 9b2078126a42e5bf5ec7861f38c9f43be6f53b47
 com/example/springapp/service/UserService.class
 com/example/springapp/exception/ApiResponse.class
 com/example/springapp/repository/TaskRepository.class

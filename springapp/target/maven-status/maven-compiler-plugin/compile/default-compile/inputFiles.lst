@@ -1,12 +1,7 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/exception/ResourceNotFoundException.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/service/UserService.java
-<<<<<<< HEAD
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/User.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AuthController.java
-=======
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/controller/AuthController.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/User.java
->>>>>>> 9b2078126a42e5bf5ec7861f38c9f43be6f53b47
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/SpringappApplication.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/security/JwtAuthenticationFilter.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/UserRepository.java
@@ -24,6 +19,5 @@
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/repository/TaskRepository.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Task.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/security/JwtTokenHelper.java
-/home/coder/project/workspace/springapp/src/main/java/com/example/springapp/model/Task.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/config/SecurityConfig.java
 /home/coder/project/workspace/springapp/src/main/java/com/example/springapp/exception/UserNotFoundAdvice.java
