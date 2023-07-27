@@ -12,7 +12,7 @@ import {
   
   } from 'mdb-react-ui-kit';
 import { MDBRadio } from 'mdb-react-ui-kit';
-import axios from 'axios';
+
 import { Link, useNavigate } from 'react-router-dom';
 import {myAxios} from '../service/helper';
 
@@ -31,11 +31,13 @@ function UserForm() {
   }
 
   
-  generate({ special: false, numeric: false });
+ 
 
 
 
   let navigate=useNavigate()
+
+  
     const [user, setUser] = useState({
       username:"",
       emailid:"",
