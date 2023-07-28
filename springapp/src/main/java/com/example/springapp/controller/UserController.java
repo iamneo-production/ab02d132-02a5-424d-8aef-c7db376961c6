@@ -45,7 +45,6 @@ public class UserController {
         User updatedUser = userService.updateUser(newUser, id);
         return ResponseEntity.ok(updatedUser);
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
@@ -55,6 +54,4 @@ public class UserController {
     public List<User> getUsersByRole(@PathVariable String userrole) {
         return userService.getUsersByRole(userrole);
     }
-    
-
 }
