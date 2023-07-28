@@ -1,8 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBContainer, MDBNavbar, MDBNavbarBrand } from 'mdb-react-ui-kit';
-import axios from 'axios';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { doLogout, isLoggedIn } from '../auth';
 import {myAxios} from '../service/helper';
 
@@ -28,7 +27,6 @@ function UserList() {
     }
     return filteredUsers;
   };
-  const { id } = useParams()
 
   useEffect(() => {
     loadUsers();
@@ -107,7 +105,7 @@ function UserList() {
           
           {handleSearch().map((user, index) => (
             <tr>
-              <td scope='row' key={index}>{user.id}</td>
+              <td key={index}>{user.id}</td>
               <td>{user.username}</td>
               <td>{user.emailid}</td>
 
