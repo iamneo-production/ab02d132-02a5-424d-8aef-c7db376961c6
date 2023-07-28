@@ -31,6 +31,8 @@ const LandingPage = () => {
       description: "Increased Productivity.",
     },
   ];
+
+
   return (
     <div>
       <nav
@@ -38,18 +40,18 @@ const LandingPage = () => {
         style={{ backgroundColor: "#008ECC" }}
       >
         <div className="container-fluid">
-          <Link className="navbar-brand fs-4" to="/">
+          <div className="navbar-brand fs-4">
             TaskManagemt
-          </Link>
+          </div>
 
-          <button
+          {/* <button
             className="navbar-toggler shadow-none border-0"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </button> */}
 
           <div
             className="sidebar offcanvas offcanvas-end"
@@ -57,14 +59,14 @@ const LandingPage = () => {
             style={{ backgroundColor: "#4169E1" }}
           >
             <div className="offcanvas-header text-white border-bottom p-3">
-              <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+              {/* <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
                 TaskManagement
               </h5>
               <button
                 type="button"
                 className="btn-close btn-close-white shadow-none"
                 data-bs-dismiss="offcanvas"
-              ></button>
+              ></button> */}
             </div>
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end ms-auto ps-3">
@@ -88,6 +90,9 @@ const LandingPage = () => {
                     Services
                   </a>
                 </li>
+
+
+
                 <li className="nav-item ps-lg-3">
                   <a
                     className="nav-link"
@@ -108,6 +113,7 @@ const LandingPage = () => {
                     Benefits
                   </a>
                 </li>
+
 
                 <li className="nav-item ps-lg-3">
                   <Link
@@ -130,15 +136,21 @@ const LandingPage = () => {
                     Login
                   </Link>
                 </li>
+
               </ul>
+
             </div>
           </div>
         </div>
+
       </nav>
+
+      {/* End Of Navbar---------------------------------------------------- */}
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-6 justify-content-center align-items-center">
             <div className="mt-5">
+
               <div className="heading_container">
                 <h1
                   id="scrollspyHeading1"
@@ -148,6 +160,7 @@ const LandingPage = () => {
                   Task Management Portal
                 </h1>
               </div>
+
               <p
                 style={{
                     
@@ -167,7 +180,9 @@ Look no further! Task Management tool is here to streamline your life and bring 
                 Task management tool seeks to increase Team Leader's
                 effectiveness, communication and productivity.{" "}
               </p>
+
               <br />
+
               <Link to="/login">
                 <button className="btn btn-primary ">
                   {" "}
@@ -176,7 +191,7 @@ Look no further! Task Management tool is here to streamline your life and bring 
               </Link>
             </div>
           </div>
-
+{/* image adding----------------------------- */}
           <div className="col-md-6 ">
             <div className="img-box">
               <img
@@ -190,7 +205,7 @@ Look no further! Task Management tool is here to streamline your life and bring 
           </div>
         </div>
       </div>
-
+{/* Starting of service -------------------------------------------------- */}
       <section class="service_section layout_padding">
         <div class="container">
           <div class="heading_container heading_center">
@@ -206,6 +221,8 @@ Look no further! Task Management tool is here to streamline your life and bring 
             <br />
           </div>
         </div>
+
+        {/* TaskManagemt service  */}
         <div class="container ">
           <div class="row">
             <div class="col-md-6 col-lg-4">
@@ -235,6 +252,7 @@ Look no further! Task Management tool is here to streamline your life and bring 
               </div>
             </div>
 
+{/* Task Completion Servive */}
             <div class="col-md-6 col-lg-4">
               <div class="box m-3 bg-white text-center card shadow border-0 p-4">
                 <div class="d-flex flex-column align-items-center">
@@ -261,6 +279,8 @@ Look no further! Task Management tool is here to streamline your life and bring 
                 </div>
               </div>
             </div>
+
+{/* Admin Service */}
 
             <div class="col-md-6 col-lg-4">
               <div class="box m-3 bg-white text-center card shadow border-0 p-4">
@@ -289,6 +309,7 @@ Look no further! Task Management tool is here to streamline your life and bring 
               </div>
             </div>
 
+{/* Report Service */}
             <div class="col-md-6 col-lg-4">
               <div class="box m-3 bg-white text-center card shadow border-0 p-4">
                 <div class="d-flex flex-column align-items-center">
@@ -319,6 +340,7 @@ Look no further! Task Management tool is here to streamline your life and bring 
         </div>
       </section>
 
+{/* Start of Benefits Section------------------------------------------------- */}
       <section id="pros" class="features">
         <div class="container" data-aos="fade-up">
           <header class="section-header">

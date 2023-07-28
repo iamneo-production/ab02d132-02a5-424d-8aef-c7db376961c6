@@ -11,7 +11,7 @@ import {
   
   } from 'mdb-react-ui-kit';
 import { MDBRadio } from 'mdb-react-ui-kit';
-import axios from 'axios';
+
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import {myAxios} from '../service/helper';
 
@@ -31,7 +31,9 @@ function EditUser() {
 
 
   let navigate=useNavigate()
+
   const {id}=useParams();
+  
     const [user, setUser] = useState({
       username:"",
       emailid:"",

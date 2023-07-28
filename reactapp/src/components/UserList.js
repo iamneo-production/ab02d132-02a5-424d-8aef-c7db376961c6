@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { MDBBtn, MDBTable, MDBTableHead, MDBTableBody, MDBContainer, MDBNavbar, MDBNavbarBrand } from 'mdb-react-ui-kit';
-import axios from 'axios';
+
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { doLogout, isLoggedIn } from '../auth';
 import {myAxios} from '../service/helper';
@@ -11,6 +11,7 @@ import {myAxios} from '../service/helper';
 function UserList() {
 
   const [users, setUsers] = useState([]);
+  
   const [searchText, setSearchText] = useState('');
   const [searchCategory, setSearchCategory] = useState('');
   const handleSearch = () => {

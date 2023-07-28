@@ -1,12 +1,11 @@
 import React,{useState,useEffect} from 'react'
-import axios from 'axios';
+
 import { myAxios } from "../service/helper";
 import {
    
     MDBContainer,
     MDBCard,
     MDBCardBody,
-    
     MDBCardText,
     MDBCardHeader,
     MDBCardFooter,
@@ -30,6 +29,7 @@ function ViewUser() {
    })
 
    const {id}=useParams();
+
    useEffect(() => {
     loadUser()
      },[])
