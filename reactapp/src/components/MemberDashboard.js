@@ -9,7 +9,7 @@ import {myAxios} from '../service/helper';
 
 
 const MemberDashboard = () => {
-  const [modal, setModal] = useState(false);
+  // const [ setModal] = useState(false);
   const [taskList, setTaskList] = useState([]);
 
   useEffect(() => {
@@ -50,18 +50,6 @@ const MemberDashboard = () => {
     localStorage.setItem('taskList', JSON.stringify(tempList));
     setTaskList(tempList);
     window.location.reload();
-  };
-
-  const toggle = () => {
-    setModal(!modal);
-  };
-
-  const saveTask = (taskObj) => {
-    let tempList = taskList;
-    tempList.push(taskObj);
-    localStorage.setItem('taskList', JSON.stringify(tempList));
-    setTaskList(tempList);
-    setModal(false);
   };
 
   return (

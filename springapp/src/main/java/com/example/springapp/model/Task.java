@@ -1,11 +1,8 @@
 package com.example.springapp.model;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.*;
@@ -17,8 +14,6 @@ import java.util.*;
 @Entity
 @Table(name = "task")
 public class Task {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long taskId;
@@ -31,14 +26,6 @@ public class Task {
 
 
 // Constructors, getters, and setters
-
-
-
-
-
-
-
-
 
     public Long getTaskId() {
         return taskId;
@@ -79,8 +66,6 @@ public class Task {
     public String getAssignedTo() { return assignedTo; }
 
     public void setAssignedTo(String assignedTo) { this.assignedTo = assignedTo; }
-
-
 
     @Override
     public String toString() {

@@ -1,5 +1,4 @@
 package com.example.springapp.controller;
-
 import com.example.springapp.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,15 +9,13 @@ import com.example.springapp.repository.TaskRepository;
 
 import java.util.List;
 import java.util.Optional;
-@CrossOrigin("https://8081-dafcbabecacecbefdccdeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io")
 @RestController
 @RequestMapping("/api/leader/tasks")
 public class TaskController {
 
     @Autowired
     private TaskRepository taskRepository;
-
-
 
     // API to get all tasks
     @GetMapping
@@ -42,10 +39,6 @@ public class TaskController {
             return ResponseEntity.notFound().build();
         }
     }
-
-
-
-
 
     // API to update a task by ID
     @PutMapping("/EditTask/{id}")
@@ -91,8 +84,6 @@ public class TaskController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
-
-    
 
     // API endpoint to get all tasks done by a particular user
     @GetMapping("/assign/{assignedTo}")
