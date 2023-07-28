@@ -7,8 +7,6 @@ import main from "../images/main2.jpg";
 import ben from "../images/ben.png"
 import { Link } from "react-router-dom";
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = () => {
   let benefits = [
@@ -39,7 +37,7 @@ const LandingPage = () => {
       >
         <div className="container-fluid">
           <Link className="navbar-brand fs-4" to="/">
-            TaskManagemt
+          TaskManagement
           </Link>
 
           <button
