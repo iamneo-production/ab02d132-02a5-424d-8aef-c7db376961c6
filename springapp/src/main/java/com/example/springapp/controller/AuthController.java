@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.springapp.model.User;
 import com.example.springapp.exception.ApiException;
 import com.example.springapp.repository.UserRepository;
@@ -23,7 +22,7 @@ import com.example.springapp.security.JwtTokenHelper;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("https://8081-dafcbabecacecbefdccdeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io")
 public class AuthController {
     
     @Autowired

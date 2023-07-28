@@ -5,11 +5,13 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@fortawesome/fontawesome-free": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@wcj/generate-password": "^1.0.3",
     "axios": "^1.4.0",
+    "font-awesome": "^4.7.0",
     "mdb-react-ui-kit": "^6.1.0",
     "react": "^18.2.0",
     "react-date-picker": "^10.3.0",
@@ -23,7 +25,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=8081 react-scripts start",
+    "start": "concurrently \"PORT=8081 react-scripts start\" \"cd .. && cd springapp && mvn clean install && mvn spring-boot:run -DskipTests \"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

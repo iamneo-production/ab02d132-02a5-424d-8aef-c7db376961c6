@@ -29,7 +29,6 @@ export const Login = () => {
         }
         //submit the server to generate token
         loginUser(loginDetail).then((data)=>{
-            
             doLogin(data,()=>{
                 const role=getCurrentUserDetail().userrole;
                 if(role==='Member'){
@@ -46,7 +45,6 @@ export const Login = () => {
 
             toast.success("Login Success");
         }).catch(error=>{
-            // console.log('Error in Login');
             if(error.response.status===400 || error.response.status===404){
                 toast.error(error.response.data.message)
             }

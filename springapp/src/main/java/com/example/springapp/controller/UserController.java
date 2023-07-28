@@ -1,7 +1,5 @@
 package com.example.springapp.controller;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,13 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.springapp.model.User;
 import com.example.springapp.service.UserService;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin("https://8081-dafcbabecacecbefdccdeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-ebaabbafcdafacecbefdccdeaeaadbdbabf.project.examly.io")
 public class UserController {
 
     @Autowired
@@ -48,7 +45,6 @@ public class UserController {
         User updatedUser = userService.updateUser(newUser, id);
         return ResponseEntity.ok(updatedUser);
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
@@ -58,6 +54,4 @@ public class UserController {
     public List<User> getUsersByRole(@PathVariable String userrole) {
         return userService.getUsersByRole(userrole);
     }
-    
-
 }

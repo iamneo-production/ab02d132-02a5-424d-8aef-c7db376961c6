@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles/Styles.css';
 import { Link } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import axios from 'axios';
 import { myAxios } from '../service/helper';
 
 const ViewDetails = ({ modal, toggle, taskObj, deleteTask, index }) => {
@@ -22,7 +21,7 @@ const ViewDetails = ({ modal, toggle, taskObj, deleteTask, index }) => {
 
   return (
     <Modal isOpen={modal} toggle={toggle}>
-      <ModalHeader toggle={toggle}>Task Description</ModalHeader>
+      <ModalHeader toggle={toggle}><center>Task Description</center></ModalHeader>
       <ModalBody>
         <div key={taskObj.id}>
           <p>Task Id: {taskObj.taskId}</p>
