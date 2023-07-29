@@ -22,7 +22,6 @@ export const Login = () => {
 
     const handleFormSubmit=(event)=>{
         event.preventDefault();
-        // console.log(loginDetail);
 
         if(loginDetail.username.trim()===""|| loginDetail.password.trim()===""){
             toast.error("Username or Password required !!")
@@ -30,10 +29,7 @@ export const Login = () => {
         }
         //submit the server to generate token
         loginUser(loginDetail).then((data)=>{
-            // console.log("user login ");
-            // console.log(data);
             doLogin(data,()=>{
-                // console.log("login details is saved to localstorage");
                 const role=getCurrentUserDetail().userrole;
                 if(role==='Member'){
                     navigate("/tasks")
@@ -49,7 +45,6 @@ export const Login = () => {
 
             toast.success("Login Success");
         }).catch(error=>{
-            // console.log('Error in Login');
             if(error.response.status===400 || error.response.status===404){
                 toast.error(error.response.data.message)
             }

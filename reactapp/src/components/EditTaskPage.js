@@ -3,7 +3,6 @@ import '../styles/Styles.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Button } from 'reactstrap';
-import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import {myAxios} from '../service/helper';
 

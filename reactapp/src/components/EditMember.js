@@ -65,7 +65,7 @@ const AssignTask = ({taskObj}) => {
             <b>EDIT TASK</b>
           </h5>
           <form>
-            <div className="form-group mt-3">
+            {/* <div className="form-group mt-3">
               <label htmlFor="taskName">Task Name</label>
               <input
                 type="text"
@@ -86,7 +86,7 @@ const AssignTask = ({taskObj}) => {
                 disabled
                 onChange={(e) => setTaskDescription(e.target.value)}
               />
-            </div>
+            </div> */}
             
             <div className="form-group mt-3">
               <label>Status</label>
